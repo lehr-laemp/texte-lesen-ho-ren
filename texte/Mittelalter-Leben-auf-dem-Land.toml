@@ -1,0 +1,129 @@
+# ##########################################
+
+# Titel des Textes
+titel = "Mittelalter-Leben-auf-dem-Land"
+
+# Quelle des Textes
+quelle = "?"
+
+# eventuell Adresse zu einem Bild
+bild = ""
+
+# Hier kommt der Text
+text = """
+Als die Glocke vom Kloster läutet, wacht die
+elfjährige Käthi auf. Sie schüttelt das Stroh von
+ihrem Kleid und zieht sich schnell an. Im
+Morgengrauen geht sie mit ihrer Mutter und ihren
+Geschwistern zur Kirche im Dorf. Der Priester, Pater
+Gabriel, spricht ein Gebet auf Lateinisch und gibt
+den Segen. Kurz danach, als die ersten
+Sonnenstrahlen ins Zimmer scheinen, essen alle
+kalten Getreidebrei.
+
+Die jüngeren Geschwister und die Mutter arbeiten
+dann im Gemüsegarten vor dem Haus. Käthi muss
+aufs Feld gehen. Im Mai muss man alles Unkraut
+entfernen.
+Käthi geht an der Gemeindewiese vorbei zum
+Dorfrand, wo die Felder sind. Nachts hat es
+geregnet und die Erde unter ihren Füssen ist
+weich. Mit einem spitzen Stück Holz lockert Käthi
+den Boden und zieht das Unkraut heraus. Das ist
+nicht so anstrengend wie die Arbeit im März, wenn
+sie mit ihrem Vater den Acker bearbeitet.
+
+Nach dem Mittagessen gibt ihr die Mutter drei tote
+Hühner und 20 Eier. Das sind die Abgaben für das
+Kloster. Käthi geht den Hügel hinauf und bringt
+alles zum Mönch Severin. Dieser schickt sie dann
+zum Kräutergarten, um Steine aus den Beeten zu
+nehmen.
+
+Dreimal in der Woche arbeitet Käthi hier ohne
+Bezahlung. Die Arbeit im Kräutergarten ist
+spannender als die Arbeit im Dorf. Käthi lernt neue
+Kräuter kennen und die Mönche erklären ihr,
+gegen welche Krankheiten sie helfen.
+
+Den Gottesdienst am Abend besucht Käthi mit
+allen Dorfbewohnern in der Kirche. Danach hilft
+sie der Mutter beim Kochen des Abendessens:
+Eintopf aus Erbsen, Speck und Rüben. Im letzten
+Tageslicht beginnt Käthi noch, den Mantel ihres
+Vaters zu nähen. Die Mutter spinnt Wolle zu Garn.
+Doch als Käthi nichts mehr sehen kann, streut sie
+etwas frisches Stroh auf ihre Schlafecke und
+schläft sehr müde ein."""
+
+# Fragen zum Text (von KI erzeugt)
+fragen = """
+"1. Wie alt ist Käthi?",
+"2. Was macht Käthi, als sie aufwacht?",
+"3. Wohin geht Käthi am Morgen mit ihrer Familie?",
+"4. Wer ist Pater Gabriel?",
+"5. Was essen Käthi und ihre Familie zum Frühstück?",
+"6. Was muss Käthi im Mai im Feld tun?",
+"7. Wie fühlt sich der Boden unter Käthis Füssen an?",
+"8. Was bringt Käthi dem Mönch Severin?",
+"9. Warum arbeitet Käthi dreimal in der Woche im Kräutergarten?",
+"10. Was lernt Käthi im Kräutergarten?",
+"11. Was kocht Käthi mit ihrer Mutter zum Abendessen?",
+"12. Was macht Käthi am Ende des Tages vor dem Schlafen?"
+"""
+
+# Antworten zu den Fragen
+antworten = """
+"1. Wie alt ist Käthi? Käthi ist elf Jahre alt.",
+"2. Was macht Käthi, als sie aufwacht? Sie schüttelt das Stroh von ihrem Kleid und zieht sich schnell an.",
+"3. Wohin geht Käthi am Morgen mit ihrer Familie? Sie geht zur Kirche im Dorf.",
+"4. Wer ist Pater Gabriel? Pater Gabriel ist der Priester.",
+"5. Was essen Käthi und ihre Familie zum Frühstück? Sie essen kalten Getreidebrei.",
+"6. Was muss Käthi im Mai im Feld tun? Sie muss Unkraut entfernen.",
+"7. Wie fühlt sich der Boden unter Käthis Füssen an? Der Boden ist weich.",
+"8. Was bringt Käthi dem Mönch Severin? Sie bringt drei tote Hühner und 20 Eier.",
+"9. Warum arbeitet Käthi dreimal in der Woche im Kräutergarten? Die Arbeit im Kräutergarten ist spannender als die Arbeit im Dorf.",
+"10. Was lernt Käthi im Kräutergarten? Sie lernt neue Kräuter und ihre Heilwirkungen kennen.",
+"11. Was kocht Käthi mit ihrer Mutter zum Abendessen? Sie kochen einen Eintopf aus Erbsen, Speck und Rüben.",
+"12. Was macht Käthi am Ende des Tages vor dem Schlafen? Sie streut frisches Stroh auf ihre Schlafecke und schläft ein."
+"""
+
+# Rückmeldung der KI
+ki_antwort = """**Meine Gedanken zu den Fragen:**
+Ich werde Fragen formulieren, die sich auf wichtige Details und die Handlung des Textes konzentrieren. Dabei werde ich verschiedene Aspekte der Geschichte ansprechen, wie Charaktere, Orte, Geschehnisse und Gefühle.
+
+**Liste der Fragen:**
+```python
+fragen = [
+    "1. Wie alt ist Käthi?",
+    "2. Was macht Käthi, als sie aufwacht?",
+    "3. Wohin geht Käthi am Morgen mit ihrer Familie?",
+    "4. Wer ist Pater Gabriel?",
+    "5. Was essen Käthi und ihre Familie zum Frühstück?",
+    "6. Was muss Käthi im Mai im Feld tun?",
+    "7. Wie fühlt sich der Boden unter Käthis Füssen an?",
+    "8. Was bringt Käthi dem Mönch Severin?",
+    "9. Warum arbeitet Käthi dreimal in der Woche im Kräutergarten?",
+    "10. Was lernt Käthi im Kräutergarten?",
+    "11. Was kocht Käthi mit ihrer Mutter zum Abendessen?",
+    "12. Was macht Käthi am Ende des Tages vor dem Schlafen?"
+]
+```
+
+**Liste der Frage-Antwort-Paare:**
+```python
+fragen_antworten = [
+    "1. Wie alt ist Käthi? Käthi ist elf Jahre alt.",
+    "2. Was macht Käthi, als sie aufwacht? Sie schüttelt das Stroh von ihrem Kleid und zieht sich schnell an.",
+    "3. Wohin geht Käthi am Morgen mit ihrer Familie? Sie geht zur Kirche im Dorf.",
+    "4. Wer ist Pater Gabriel? Pater Gabriel ist der Priester.",
+    "5. Was essen Käthi und ihre Familie zum Frühstück? Sie essen kalten Getreidebrei.",
+    "6. Was muss Käthi im Mai im Feld tun? Sie muss Unkraut entfernen.",
+    "7. Wie fühlt sich der Boden unter Käthis Füssen an? Der Boden ist weich.",
+    "8. Was bringt Käthi dem Mönch Severin? Sie bringt drei tote Hühner und 20 Eier.",
+    "9. Warum arbeitet Käthi dreimal in der Woche im Kräutergarten? Die Arbeit im Kräutergarten ist spannender als die Arbeit im Dorf.",
+    "10. Was lernt Käthi im Kräutergarten? Sie lernt neue Kräuter und ihre Heilwirkungen kennen.",
+    "11. Was kocht Käthi mit ihrer Mutter zum Abendessen? Sie kochen einen Eintopf aus Erbsen, Speck und Rüben.",
+    "12. Was macht Käthi am Ende des Tages vor dem Schlafen? Sie streut frisches Stroh auf ihre Schlafecke und schläft ein."
+]
+```"""

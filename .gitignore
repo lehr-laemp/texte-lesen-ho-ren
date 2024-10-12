@@ -1,0 +1,4 @@
+.idea
+.vscode
+script_dir/__pycache__
+venv
