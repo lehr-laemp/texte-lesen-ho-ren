@@ -69,4 +69,5 @@ def main() -> bool:
 if __name__ == '__main__':
     # helfer.teste_start()
 
-    main()
+    helfer.erstelle_index_html()
+    # main()

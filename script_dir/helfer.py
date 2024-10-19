@@ -35,16 +35,58 @@ KI_USER_PROMPT = """
 Bitte schreibe zu folgenden Text 12 Fragen.
 Sie sollen zum genauen Lesen und Nachdenken anregen.
 
-Bitte gib die Fragen als python-Liste zurück und nummeriere sie.
-Zum Beispiel so: ["1. Wer ist Ute?", "2. Wo arbeitet Ute am Morgen?"]
+Bitte gib die Fragen als html-Liste zurück und nummeriere sie.
+Zum Beispiel so: 
+<h2>Fragen</h2>
+<p>
+<ol>
+    <li>Wer ist Ute?</li>
+    <li>Wo arbeitet Ute am Morgen?</li>
+</ol>
+</p>
 
-Und dann noch als python-Liste mit den Frage-Antwort-Paaren.
-Zum Beispiel so: ["1. Wer ist Ute? Ute ist ein Bauern-Mädchen im Mittelalter.", "2. Wo arbeitet Ute am Morgen? Sie arbeitet 
-im Garten."]
+Und dann noch als html-Liste mit den Frage-Antwort-Paaren.
+Zum Beispiel so: 
+<h2>Antworten</h2>
+<p>
+    <details>
+        <ol>
+            <li>Wer ist Ute? <br>
+                Ute ist ein Bauern-Mädchen im Mittelalter.</li>
+            <li>Wo arbeitet Ute am Morgen? <br>
+                Sie arbeitet im Garten.</li>
+        </ol>
+    </details>
+</p>
 
 Das ist der Text: 
 
 """
+
+
+# -----------------------------------------------------------------------------
+def erstelle_index_html() -> bool:
+    """
+    Erstellt die Datei index.html
+        Sammelt aus dem Ordner texte alle Infos
+        und stellt daraus den Inhalt zusammen.
+    :return: True, wenn alles OK
+    """
+
+    print('\t\t erstelle_index_html')
+
+    # Abfragen, welche Dateien im Ordner texte sind
+    dateien = os.listdir(os.path.join(WORKING_DIR, 'texte'))
+    print(dateien) # ['.DS_Store', 'landleben.toml', 'test.toml']
+
+    # Dateien durchgehen
+    for datei in dateien:
+        # .DS_Store ausschliessen
+        if datei != '.DS_Store':
+            
+            print(datei)
+
+    return True
 
 
 # -----------------------------------------------------------------------------
@@ -61,16 +103,16 @@ def erstelle_leere_text_datei() -> str:
     toml_doc.add(tomlkit.comment('##########################################'))
 
     toml_doc.add(tomlkit.nl())
+    toml_doc.add(tomlkit.comment('Name der toml-Datei'))
+    toml_doc.add('dateiname', '')
+    
+    toml_doc.add(tomlkit.nl())
     toml_doc.add(tomlkit.comment('Titel des Textes'))
     toml_doc.add('titel', '')
 
     toml_doc.add(tomlkit.nl())
     toml_doc.add(tomlkit.comment('Quelle des Textes'))
     toml_doc.add('quelle', '')
-
-    toml_doc.add(tomlkit.nl())
-    toml_doc.add(tomlkit.comment('eventuell Adresse zu einem Bild'))
-    toml_doc.add('bild', '')
 
     toml_doc.add(tomlkit.nl())
     toml_doc.add(tomlkit.comment('Hier kommt der Text'))
@@ -322,7 +364,7 @@ def zeige_fenster_fuer_texte(titel: str, pfad_zur_toml_datei: str) -> bool:
         if titel == 'Neuer Text erstellen':
 
             # Bestimme neuen Dateiname aus dem Titel
-            titel_roh = str(text_feld.tk.get('4.9', '4.end- 1 chars'))
+            titel_roh = str(text_feld.tk.get('4.13', '4.end- 1 chars'))
             pfad_zur_toml_datei_neu = os.path.join(WORKING_DIR, 'texte', titel_roh + '.toml')
 
             # wenn Titel schon vorhanden?
@@ -368,7 +410,7 @@ def zeige_fenster_fuer_texte(titel: str, pfad_zur_toml_datei: str) -> bool:
         text_feld.tk.tag_config('keywords', background='white', foreground='green')
         text_feld.tk.tag_config('textzeichen', background='white', foreground='red')
 
-        keywort_liste = ['titel =', 'quelle =', 'bild =', 'text =', 'fragen =', 'antworten =']
+        keywort_liste = ['dateiname =', 'titel =', 'quelle =', 'text =', 'fragen =', 'antworten =', 'ki_antwort =']
 
         for i in range(1, anzahl_linien):
             buchstabe_1 = str(i) + '.0'  # erster Buchstabe der Linie i
@@ -397,14 +439,14 @@ def zeige_fenster_fuer_texte(titel: str, pfad_zur_toml_datei: str) -> bool:
     # -------------------------------------------------------------------------
     # Lese die toml-Datei ein
     with open(pfad_zur_toml_datei, 'r') as datei:
-        toml_inhalt = datei.read()
+        toml_string = datei.read()
 
     # -------------------------------------------------------------------------
     # Fenster erstellen
     text_fenster = gz.Window(master=APP, title=titel,
                              width=600, height=700)
 
-    text_feld = gz.TextBox(master=text_fenster, text=toml_inhalt,
+    text_feld = gz.TextBox(master=text_fenster, text=toml_string,
                            align='top', width='fill', height=28,
                            multiline=True, scrollbar=True)
 

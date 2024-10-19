@@ -1,0 +1,179 @@
+# ##########################################
+
+# Name der toml-Datei
+dateiname = "landleben"
+
+# Titel des Textes
+titel = "Mittelalter: Leben auf dem Land"
+
+# Quelle des Textes
+quelle = "Buch"
+
+# Hier kommt der Text
+text = """
+Als die Glocke vom Kloster läutet, wacht die
+elfjährige Käthi auf. Sie schüttelt das Stroh von
+ihrem Kleid und zieht sich schnell an. Im
+Morgengrauen geht sie mit ihrer Mutter und ihren
+Geschwistern zur Kirche im Dorf. Der Priester, Pater
+Gabriel, spricht ein Gebet auf Lateinisch und gibt
+den Segen. Kurz danach, als die ersten
+Sonnenstrahlen ins Zimmer scheinen, essen alle
+kalten Getreidebrei.
+
+Die jüngeren Geschwister und die Mutter arbeiten
+dann im Gemüsegarten vor dem Haus. Käthi muss
+aufs Feld gehen. Im Mai muss man alles Unkraut
+entfernen.
+Käthi geht an der Gemeindewiese vorbei zum
+Dorfrand, wo die Felder sind. Nachts hat es
+geregnet und die Erde unter ihren Füssen ist
+weich. Mit einem spitzen Stück Holz lockert Käthi
+den Boden und zieht das Unkraut heraus. Das ist
+nicht so anstrengend wie die Arbeit im März, wenn
+sie mit ihrem Vater den Acker bearbeitet.
+
+Nach dem Mittagessen gibt ihr die Mutter drei tote
+Hühner und 20 Eier. Das sind die Abgaben für das
+Kloster. Käthi geht den Hügel hinauf und bringt
+alles zum Mönch Severin. Dieser schickt sie dann
+zum Kräutergarten, um Steine aus den Beeten zu
+nehmen.
+
+Dreimal in der Woche arbeitet Käthi hier ohne
+Bezahlung. Die Arbeit im Kräutergarten ist
+spannender als die Arbeit im Dorf. Käthi lernt neue
+Kräuter kennen und die Mönche erklären ihr,
+gegen welche Krankheiten sie helfen.
+
+Den Gottesdienst am Abend besucht Käthi mit
+allen Dorfbewohnern in der Kirche. Danach hilft
+sie der Mutter beim Kochen des Abendessens:
+Eintopf aus Erbsen, Speck und Rüben. Im letzten
+Tageslicht beginnt Käthi noch, den Mantel ihres
+Vaters zu nähen. Die Mutter spinnt Wolle zu Garn.
+Doch als Käthi nichts mehr sehen kann, streut sie
+etwas frisches Stroh auf ihre Schlafecke und
+schläft sehr müde ein.
+"""
+
+# Fragen zum Text (von KI erzeugt)
+fragen = """
+<h2>Fragen</h2>
+<p>
+<ol>
+    <li>Wie alt ist Käthi?</li>
+    <li>Was macht Käthi am Morgen, nachdem die Glocke läutet?</li>
+    <li>Wer spricht das Gebet in der Kirche?</li>
+    <li>Was essen Käthi und ihre Familie zum Frühstück?</li>
+    <li>Was muss Käthi im Mai auf dem Feld tun?</li>
+    <li>Wie fühlt sich die Erde unter Käthis Füssen an, nachdem es geregnet hat?</li>
+    <li>Wer gibt Käthi die Abgaben für das Kloster?</li>
+    <li>Was bringt Käthi zum Mönch Severin?</li>
+    <li>Wie oft arbeitet Käthi im Kräutergarten?</li>
+    <li>Was lernt Käthi im Kräutergarten?</li>
+    <li>Wen besucht Käthi am Abend in der Kirche?</li>
+    <li>Was kocht Käthi mit ihrer Mutter zum Abendessen?</li>
+</ol>
+</p>
+"""
+
+# Antworten zu den Fragen
+antworten = """
+<h2>Antworten</h2>
+<p>
+    <details>
+        <ol>
+            <li>Wie alt ist Käthi? <br>
+                Käthi ist elf Jahre alt.</li>
+            <li>Was macht Käthi am Morgen, nachdem die Glocke läutet? <br>
+                Sie wacht auf, schüttelt das Stroh von ihrem Kleid und zieht sich schnell an.</li>
+            <li>Wer spricht das Gebet in der Kirche? <br>
+                Der Priester Pater Gabriel spricht das Gebet.</li>
+            <li>Was essen Käthi und ihre Familie zum Frühstück? <br>
+                Sie essen kalten Getreidebrei.</li>
+            <li>Was muss Käthi im Mai auf dem Feld tun? <br>
+                Sie muss das Unkraut entfernen.</li>
+            <li>Wie fühlt sich die Erde unter Käthis Füssen an, nachdem es geregnet hat? <br>
+                Die Erde ist weich.</li>
+            <li>Wer gibt Käthi die Abgaben für das Kloster? <br>
+                Ihre Mutter gibt ihr drei tote Hühner und 20 Eier.</li>
+            <li>Was bringt Käthi zum Mönch Severin? <br>
+                Sie bringt die Hühner und Eier als Abgaben.</li>
+            <li>Wie oft arbeitet Käthi im Kräutergarten? <br>
+                Sie arbeitet dreimal in der Woche ohne Bezahlung.</li>
+            <li>Was lernt Käthi im Kräutergarten? <br>
+                Sie lernt neue Kräuter kennen und wie sie gegen Krankheiten helfen.</li>
+            <li>Wen besucht Käthi am Abend in der Kirche? <br>
+                Sie besucht den Gottesdienst mit allen Dorfbewohnern.</li>
+            <li>Was kocht Käthi mit ihrer Mutter zum Abendessen? <br>
+                Sie kochen einen Eintopf aus Erbsen, Speck und Rüben.</li>
+        </ol>
+    </details>
+</p>
+"""
+
+# Rückmeldung der KI
+ki_antwort = """
+Ich werde nun 12 Fragen zu dem gegebenen Text formulieren, die den Schülern helfen, genauer über den Inhalt nachzudenken. Diese Fragen sollten verschiedene Aspekte der Erzählung abdecken. Danach erstelle ich die HTML-Listen für Fragen und Antworten.
+
+### Überlegungen:
+1. Der Text handelt von Käthi, einem 11-jährigen Mädchen, und ihren täglichen Aktivitäten.
+2. Es gibt viele Details über die Familie, ihre Arbeit und das Leben im Dorf.
+3. Wichtige Personen im Text sind Käthi, ihre Mutter, ihre Geschwister, Pater Gabriel und Mönch Severin.
+4. Die Textstellen, die die Aktivitäten von Käthi beschreiben, sind besonders interessant.
+
+### Fragen:
+<h2>Fragen</h2>
+<p>
+<ol>
+    <li>Wie alt ist Käthi?</li>
+    <li>Was macht Käthi am Morgen, nachdem die Glocke läutet?</li>
+    <li>Wer spricht das Gebet in der Kirche?</li>
+    <li>Was essen Käthi und ihre Familie zum Frühstück?</li>
+    <li>Was muss Käthi im Mai auf dem Feld tun?</li>
+    <li>Wie fühlt sich die Erde unter Käthis Füssen an, nachdem es geregnet hat?</li>
+    <li>Wer gibt Käthi die Abgaben für das Kloster?</li>
+    <li>Was bringt Käthi zum Mönch Severin?</li>
+    <li>Wie oft arbeitet Käthi im Kräutergarten?</li>
+    <li>Was lernt Käthi im Kräutergarten?</li>
+    <li>Wen besucht Käthi am Abend in der Kirche?</li>
+    <li>Was kocht Käthi mit ihrer Mutter zum Abendessen?</li>
+</ol>
+</p>
+
+### Antworten:
+<h2>Antworten</h2>
+<p>
+    <details>
+        <ol>
+            <li>Wie alt ist Käthi? <br>
+                Käthi ist elf Jahre alt.</li>
+            <li>Was macht Käthi am Morgen, nachdem die Glocke läutet? <br>
+                Sie wacht auf, schüttelt das Stroh von ihrem Kleid und zieht sich schnell an.</li>
+            <li>Wer spricht das Gebet in der Kirche? <br>
+                Der Priester Pater Gabriel spricht das Gebet.</li>
+            <li>Was essen Käthi und ihre Familie zum Frühstück? <br>
+                Sie essen kalten Getreidebrei.</li>
+            <li>Was muss Käthi im Mai auf dem Feld tun? <br>
+                Sie muss das Unkraut entfernen.</li>
+            <li>Wie fühlt sich die Erde unter Käthis Füssen an, nachdem es geregnet hat? <br>
+                Die Erde ist weich.</li>
+            <li>Wer gibt Käthi die Abgaben für das Kloster? <br>
+                Ihre Mutter gibt ihr drei tote Hühner und 20 Eier.</li>
+            <li>Was bringt Käthi zum Mönch Severin? <br>
+                Sie bringt die Hühner und Eier als Abgaben.</li>
+            <li>Wie oft arbeitet Käthi im Kräutergarten? <br>
+                Sie arbeitet dreimal in der Woche ohne Bezahlung.</li>
+            <li>Was lernt Käthi im Kräutergarten? <br>
+                Sie lernt neue Kräuter kennen und wie sie gegen Krankheiten helfen.</li>
+            <li>Wen besucht Käthi am Abend in der Kirche? <br>
+                Sie besucht den Gottesdienst mit allen Dorfbewohnern.</li>
+            <li>Was kocht Käthi mit ihrer Mutter zum Abendessen? <br>
+                Sie kochen einen Eintopf aus Erbsen, Speck und Rüben.</li>
+        </ol>
+    </details>
+</p>
+"""
+
+
