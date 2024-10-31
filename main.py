@@ -11,6 +11,7 @@ main.py
 """
 # -----------------------------------------------------------------------------
 import guizero as gz
+import tomlkit
 
 from script_dir import helfer
 
@@ -43,6 +44,10 @@ def main() -> bool:
     # Button: neuer Text erstellen
     gz.PushButton(master=app, text='Texte erstellen', width=100,
                   command=helfer.klicke_button_text_erstellen)
+    
+    # # Button: bestehender Text normalisieren
+    # gz.PushButton(master=app, text='Texte normalisieren', width=100,
+    #              command=helfer.klicke_button_text_normalisieren)
 
     # Button: bestehender Text bearbeiten
     gz.PushButton(master=app, text='Texte bearbeiten', width=100,
@@ -54,6 +59,10 @@ def main() -> bool:
     
     # Button: Text zu Audio
     gz.PushButton(master=app, text='Text zu Audio', width=100,
+                  command=helfer.klicke_button_text_zu_audio)
+    
+    # Button: Erstelle alle Internet-Inhalte
+    gz.PushButton(master=app, text='Texte für Internet', width=100,
                   command=helfer.klicke_button_text_zu_audio)
 
     # Buttons erstellen und hinzufügen
@@ -69,5 +78,19 @@ def main() -> bool:
 if __name__ == '__main__':
     # helfer.teste_start()
 
-    helfer.erstelle_index_html()
-    # main()
+    # helfer.erstelle_index_html()
+    main()
+
+    # # Lesen die Text-Datei
+    # with open('./texte/tttesssttt.toml', 'r') as f:
+    #     toml_content = f.read()
+
+    # # Parsen des TOML-Inhalts
+    # toml_doc = tomlkit.parse(toml_content)
+    # text = toml_doc['text']    
+
+    # print(helfer.formatiere_text(text_roh=text))
+
+    # text -> text.html
+    # helfer.erstelle_html_text(toml_dateiname='landleben.toml')
+

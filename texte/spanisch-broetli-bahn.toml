@@ -1,0 +1,214 @@
+# ##########################################
+
+# Name der toml-Datei
+dateiname = "spanisch-broetli-bahn"
+
+# Titel des Textes
+titel = "Die Spanisch-Brötili-Bahn"
+
+# Quelle des Textes
+quelle = "Die Schweizerische Post, 2017"
+
+# Hier kommt der Text
+text = """
+Vor vielen Jahren, im Jahr 1847, wurde die erste Bahnstelle in der Schweiz eröffnet.  
+Diese Bahnstrecke hiess Nordbahn, aber bald nannten die Leute sie "Spanisch-Brötli-Bahn".  
+
+Der Grund für diesen Namen ist lustig.  
+In anderen Ländern in Europa wurden Bahnen früher gebaut.  
+In der Schweiz hat es länger gedauert.  
+Das liegt an den vielen Hügeln und Bergen.  
+Die erste Bahn sollte zwischen Zürich und Basel fahren.  
+
+Aber die Schweizer Kantone konnten sich nicht einigen, wo die Bahn durchfahren sollte.  
+Dort, wo die Bahn fahren sollte, mussten die Landbesitzer etwas von ihrem Land abgeben.  
+Das gefiel nicht allen.  
+Manche waren so wütend, dass sie die Leute verjagten, die das Land ausmessen sollten.  
+Nach vielen Diskussionen stimmte der Kanton Aargau zu.  
+
+1845 begann der Bau der Bahn.  
+In Baden wurde der erste Eisenbahntunnel Europas gebaut.  
+Der Tunnel heisst Schlossbergtunnel.  
+Gefangene halfen beim Bau.  
+Im Frühling 1847 war der Tunnel fertig.  
+
+Am 7. August wurde die Bahn feierlich eröffnet.  
+Der erste Zug fuhr um 13 Uhr von Baden nach Zürich.  
+Damals dauerte die Reise 45 Minuten.  
+Heute nur noch 15 Minuten.  
+Die Bahn hiess bald "Spanisch-Brötli-Bahn".  
+
+Warum?  
+Reiche Zürcher Leute wollten ein besonderes Gebäck aus Baden.  
+Dieses Gebäck hiess "Spanisches Brötli". 
+Weil sie oft in Baden zur Kur waren, schickten sie ihre Diener, um das Gebäck zu holen.  
+Aber in Zürich durften die Bäcker solche Brötchen nicht machen.  
+Bevor es die Eisenbahn gab, mussten die Diener am Samstag um Mitternacht loslaufen, damit die Brötli am Sonntagmorgen da waren.  
+Mit der Bahn ging es viel schneller und einfacher.  
+Die Strecke ist nämlich 25 Kilometer lang. 
+"""
+
+# Fragen zum Text (von KI erzeugt)
+fragen = """
+<h2>Fragen</h2>
+<p>
+<ol>
+    <li>Wann wurde die erste Bahnstelle in der Schweiz eröffnet?</li>
+    <li>Wie hiess die Bahnstrecke zuerst?</li>
+    <li>Warum wurde die Bahn "Spanisch-Brötli-Bahn" genannt?</li>
+    <li>Warum wurde in der Schweiz die Bahn später gebaut als in anderen Ländern?</li>
+    <li>Zwischen welchen Städten sollte die erste Bahn fahren?</li>
+    <li>Warum konnten sich die Kantone nicht einigen?</li>
+    <li>Was geschah mit den Landbesitzern, als die Bahn gebaut werden sollte?</li>
+    <li>Wann begann der Bau der Bahn?</li>
+    <li>Welcher Tunnel wurde in Baden gebaut?</li>
+    <li>Wer half beim Bau des Schlossbergtunnels?</li>
+    <li>Am welchen Datum wurde die Bahn eröffnet?</li>
+    <li>Wie lange dauerte die Reise ursprünglich von Baden nach Zürich?</li>
+</ol>
+</p>
+"""
+
+# Antworten zu den Fragen
+antworten = """
+<h2>Antworten</h2>
+<p>
+    <details>
+        <ol>
+            <li>Wann wurde die erste Bahnstelle in der Schweiz eröffnet? <br>
+                Die erste Bahnstelle wurde im Jahr 1847 eröffnet.</li>
+            <li>Wie hiess die Bahnstrecke zuerst? <br>
+                Die Bahnstrecke hiess zunächst Nordbahn.</li>
+            <li>Warum wurde die Bahn "Spanisch-Brötli-Bahn" genannt? <br>
+                Sie wurde so genannt, weil reiche Zürcher ein besonderes Gebäck aus Baden wollten.</li>
+            <li>Warum wurde in der Schweiz die Bahn später gebaut als in anderen Ländern? <br>
+                Das lag an den vielen Hügeln und Bergen in der Schweiz.</li>
+            <li>Zwischen welchen Städten sollte die erste Bahn fahren? <br>
+                Die Bahn sollte zwischen Zürich und Basel fahren.</li>
+            <li>Warum konnten sich die Kantone nicht einigen? <br>
+                Die Kantone konnten sich nicht einigen, weil Landbesitzer etwas von ihrem Land abgeben mussten.</li>
+            <li>Was geschah mit den Landbesitzern, als die Bahn gebaut werden sollte? <br>
+                Einige Landbesitzer waren wütend und verjagten die Leute, die das Land ausmessen sollten.</li>
+            <li>Wann begann der Bau der Bahn? <br>
+                Der Bau der Bahn begann 1845.</li>
+            <li>Welcher Tunnel wurde in Baden gebaut? <br>
+                In Baden wurde der Schlossbergtunnel gebaut.</li>
+            <li>Wer half beim Bau des Schlossbergtunnels? <br>
+                Gefangene halfen beim Bau des Schlossbergtunnels.</li>
+            <li>Am welchen Datum wurde die Bahn eröffnet? <br>
+                Die Bahn wurde am 7. August eröffnet.</li>
+            <li>Wie lange dauerte die Reise ursprünglich von Baden nach Zürich? <br>
+                Die Reise dauerte ursprünglich 45 Minuten.</li>
+        </ol>
+    </details>
+</p>
+"""
+
+# Rückmeldung der KI
+ki_antwort = """**Gedanken zur Aufgabe:**
+
+Ich habe nun den Text gelesen und werde Fragen formulieren, die die Schüler zum genauen Lesen und Nachdenken anregen. Dabei werde ich versuchen, verschiedene Aspekte des Textes zu berücksichtigen, wie zum Beispiel historische Details, geografische Informationen und besondere Vorkommnisse. Die Fragen sollen klar und verständlich sein.
+
+**Fragen in HTML-Liste:**
+
+```html
+<h2>Fragen</h2>
+<p>
+<ol>
+    <li>Wann wurde die erste Bahnstelle in der Schweiz eröffnet?</li>
+    <li>Wie hiess die Bahnstrecke zuerst?</li>
+    <li>Warum wurde die Bahn "Spanisch-Brötli-Bahn" genannt?</li>
+    <li>Warum wurde in der Schweiz die Bahn später gebaut als in anderen Ländern?</li>
+    <li>Zwischen welchen Städten sollte die erste Bahn fahren?</li>
+    <li>Warum konnten sich die Kantone nicht einigen?</li>
+    <li>Was geschah mit den Landbesitzern, als die Bahn gebaut werden sollte?</li>
+    <li>Wann begann der Bau der Bahn?</li>
+    <li>Welcher Tunnel wurde in Baden gebaut?</li>
+    <li>Wer half beim Bau des Schlossbergtunnels?</li>
+    <li>Am welchen Datum wurde die Bahn eröffnet?</li>
+    <li>Wie lange dauerte die Reise ursprünglich von Baden nach Zürich?</li>
+</ol>
+</p>
+```
+
+**Fragen-Antwort-Paare in HTML-Liste:**
+
+```html
+<h2>Antworten</h2>
+<p>
+    <details>
+        <ol>
+            <li>Wann wurde die erste Bahnstelle in der Schweiz eröffnet? <br>
+                Die erste Bahnstelle wurde im Jahr 1847 eröffnet.</li>
+            <li>Wie hiess die Bahnstrecke zuerst? <br>
+                Die Bahnstrecke hiess zunächst Nordbahn.</li>
+            <li>Warum wurde die Bahn "Spanisch-Brötli-Bahn" genannt? <br>
+                Sie wurde so genannt, weil reiche Zürcher ein besonderes Gebäck aus Baden wollten.</li>
+            <li>Warum wurde in der Schweiz die Bahn später gebaut als in anderen Ländern? <br>
+                Das lag an den vielen Hügeln und Bergen in der Schweiz.</li>
+            <li>Zwischen welchen Städten sollte die erste Bahn fahren? <br>
+                Die Bahn sollte zwischen Zürich und Basel fahren.</li>
+            <li>Warum konnten sich die Kantone nicht einigen? <br>
+                Die Kantone konnten sich nicht einigen, weil Landbesitzer etwas von ihrem Land abgeben mussten.</li>
+            <li>Was geschah mit den Landbesitzern, als die Bahn gebaut werden sollte? <br>
+                Einige Landbesitzer waren wütend und verjagten die Leute, die das Land ausmessen sollten.</li>
+            <li>Wann begann der Bau der Bahn? <br>
+                Der Bau der Bahn begann 1845.</li>
+            <li>Welcher Tunnel wurde in Baden gebaut? <br>
+                In Baden wurde der Schlossbergtunnel gebaut.</li>
+            <li>Wer half beim Bau des Schlossbergtunnels? <br>
+                Gefangene halfen beim Bau des Schlossbergtunnels.</li>
+            <li>Am welchen Datum wurde die Bahn eröffnet? <br>
+                Die Bahn wurde am 7. August eröffnet.</li>
+            <li>Wie lange dauerte die Reise ursprünglich von Baden nach Zürich? <br>
+                Die Reise dauerte ursprünglich 45 Minuten.</li>
+        </ol>
+    </details>
+</p>
+```"""
+
+# Hier kommt der Original-Text
+text_original = """
+1847, vor rund 160 Jahren, wurde die erste ganz in der
+Schweiz gelegene Bahnstrecke eröffnet. 
+Sie hiess damals Nordbahn, hatte allerdings bald einen Spitznamen: Spanisch-Brötli-Bahn. 
+Wie es dazu kam, hat lustige Gründe.
+
+Im Gegensatz zu anderen europäischen Ländern bauten
+die Schweizer ihre erste Bahn erst recht spät. 
+Das hat unter anderem mit der hügeligen Gegend zu tun. Schliesslich war klar, wo die erste Bahn durchfahren sollte: 
+Die Nordbahn war zwischen Zürich und Basel geplant.
+
+Doch die Schweizer Kantone waren sich untereinander nicht
+einig über die Streckenführung der Eisenbahn. 
+Zudem: Dort, wo die Bahn durchführen sollte, hatten die Landbesitzer Land abzutreten. 
+Damit waren gewisse Landbesitzer gar nicht zufrieden. 
+Sie vertrieben die Geometer, die das Land für das
+Bahntrassee vermessen wollten.
+
+Nach jahrelangen Diskussionen und Auseinandersetzungen
+stimmte die Regierung des Kantons Aargau den Plänen zu.
+1845 konnte mit dem Bau begonnen werden. 
+
+In Baden war gar der erste Eisenbahntunnel Europas geplant: der Schlossbergtunnel. 
+Die Arbeiten am Tunnel verrichteten Strafgefangene. 
+Im Frühling 1847 gelang der Tunneldurchstich; 
+am 7. August wurde die Bahn feierlich eröffnet. 
+Um 13 Uhr fuhr der erste Zug von Baden nach Zürich. 
+Die Reise dauerte damals 45 Minuten, heute noch 15 Minuten.
+
+Schon bald erhielt die Bahn den Namen Spanisch-Brötli-Bahn.
+Die feine Zürcher Gesellschaft schickte nämlich ihre Dienstboten von Zürich aus nach Baden in eine Bäckerei, um dort
+ein spezielles Gebäck, eben «Spanische Brötli», zu kaufen.
+Reiche Zürcher waren damals oft in Baden zur Bäderkur und
+mochten das feine Luxusgebäck. Im Kanton Zürich durften
+die Bäcker zu dieser Zeit keine solchen Luxusbrötchen backen.
+
+Bevor es die Bahn gab, waren die Boten jeweils am Samstag
+um Mitternacht losmarschiert, damit die feinen Damen und
+Herren auf dem Frühstückstisch am Sonntagmorgen Spanische Brötli vorfanden. 
+Die Spanisch-Brötli-Bahn war für sie eine grosse Erleichterung. Die Strecke zwischen Baden und Zürich ist immerhin 25 Kilometer lang.
+"""
+
+
+
