@@ -15,6 +15,8 @@ import re
 from random import choice
 import subprocess
 import datetime
+import time
+import webbrowser
 
 
 # -----------------------------------------------------------------------------
@@ -633,6 +635,12 @@ def klicke_button_texte_ins_internet() -> bool:
     mache_lokalen_commit(kommentar=aktuelle_zeit)
 
     mache_push_zu_github()
+
+    # warte etwas und zeige dann die erstellte Seite
+    time.sleep(2)
+
+    webbrowser.open(url='https://lehr-laemp.github.io/texte-lesen-ho-ren/')
+
 
     return True
 
