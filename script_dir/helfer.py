@@ -628,9 +628,11 @@ def klicke_button_texte_ins_internet() -> bool:
 
     print('\n\t klicke_button_texte_ins_internet')
 
-    aktuelle_zeit = datetime.datetime.now().strftime("%Y-%m-%d---%H-%M")
+    aktuelle_zeit = datetime.datetime.now().strftime("%Y-%m-%d, %H-%M")
 
     mache_lokalen_commit(kommentar=aktuelle_zeit)
+
+    mache_push_zu_github()
 
     return True
 
@@ -689,6 +691,39 @@ def mache_lokalen_commit(kommentar: str) -> bool:
         return False
 
 
+# -----------------------------------------------------------------------------
+def mache_push_zu_github() -> bool:
+    """
+    Macht einen Push des git-Ordners nach Github
+    :return: True, wenn alles OK
+    """
+
+    print('\t mache_push_zu_github')
+
+    repo_pfad = WORKING_DIR
+    repo_name = 'texte-lesen-ho-ren'
+    GIT_USER = 'lehr-laemp'
+    GITHUB_ACCESS_TOKEN = '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'
+
+    try:
+        
+        # Schritt 1: git push
+        # git_befehl = ['git', 'push', 'origin', 'master']
+        git_url = (f'https://{GITHUB_ACCESS_TOKEN}@github.com'
+                   f'/{GIT_USER}/{repo_name}')
+        git_befehl = ['git', 'remote', 'set-url', 'origin', git_url]
+        # print(git_befehl)
+        subprocess.run(git_befehl, check=True)
+        # ddd
+        git_befehl = ['git', 'push', '--set-upstream', 'origin', 'master']
+        subprocess.run(git_befehl, check=True)
+
+        return True
+
+    except subprocess.CalledProcessError as e:
+        print(f"Fehler beim Ausführen von Git: {e}")
+
+        return False
 
 
 # -----------------------------------------------------------------------------
