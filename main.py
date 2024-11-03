@@ -61,12 +61,16 @@ def main() -> bool:
     gz.PushButton(master=app, text='Text zu Audio', width=100,
                   command=helfer.klicke_button_text_zu_audio)
     
-    # Button: Erstelle alle Internet-Inhalte
-    gz.PushButton(master=app, text='Texte für Internet', width=100,
-                  command=helfer.klicke_button_text_zu_audio)
+    # Button: Erstelle alle html-Inhalte
+    gz.PushButton(master=app, text='Texte zu html', width=100,
+                  command=helfer.klicke_button_texte_zu_html)
+    
+    # Button: Speichere die Texte im Internet
+    gz.PushButton(master=app, text='Texte ins Internet', width=100,
+                  command=helfer.klicke_button_texte_ins_internet)
 
     # Buttons erstellen und hinzufügen
-    button1 = gz.PushButton(app, text="Button 1", command=lambda: button_clicked("Button 1"))
+    # button1 = gz.PushButton(app, text="Button 1", command=lambda: button_clicked("Button 1"))
 
     # Startet das Hauptfenster
     app.display()

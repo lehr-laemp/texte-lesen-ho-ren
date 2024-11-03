@@ -14,6 +14,7 @@ import os
 import re
 from random import choice
 import subprocess
+import datetime
 
 
 # -----------------------------------------------------------------------------
@@ -98,6 +99,13 @@ def erstelle_html_audio(toml_dateiname: str) -> bool:
         toml_content = file.read()
     toml_doc = tomlkit.parse(toml_content)
 
+    # Test, ob Audio-Datei zu diesem Text schon vorhanden ist, sonst Abbruch
+    pfad_zu_audiodatei = os.path.join(WORKING_DIR, 'mat', toml_doc['dateiname'] + '.mp3')
+    if not os.path.exists(pfad_zu_audiodatei):
+        print()
+        print(f'ACHTUNG: Audiodatei zu {toml_dateiname} fehlt.')
+        return False
+    
     # Inhalte für html-Datei zusammenstellen
     html_inhalt = HTML_KOPF
     html_inhalt += f'<h1>{toml_doc['titel']}</h1> \n'
@@ -138,6 +146,7 @@ def erstelle_html_audio(toml_dateiname: str) -> bool:
     datei_name = os.path.join(WORKING_DIR, 'mat', toml_doc['dateiname'] + '-audio.html')
     with open(file=datei_name, mode='w', encoding='utf-8') as datei:
         datei.write(html_inhalt)
+
 
     return True
 
@@ -240,14 +249,18 @@ def erstelle_index_html() -> bool:
         # .DS_Store ausschliessen
         if datei != '.DS_Store':
             
-            erstelle_html_audio(toml_dateiname=datei)
-            erstelle_html_text(toml_dateiname=datei)
-
             # toml-Datei einlesen
             with open(file=os.path.join(WORKING_DIR, 'texte', datei), 
                       mode='r', encoding='utf-8') as file:
                 toml_content = file.read()
             toml_doc = tomlkit.parse(toml_content)
+
+            # Test, ob Audio-Datei zu diesem Text schon vorhanden ist, sonst Abbruch
+            pfad_zu_audiodatei = os.path.join(WORKING_DIR, 'mat', toml_doc['dateiname'] + '.mp3')
+            if not os.path.exists(pfad_zu_audiodatei):
+                print()
+                print(f'ACHTUNG: Audiodatei zu {datei} fehlt.')
+                return False    
 
             # Links zu den Seiten zusammenstellen
             index_inhalt += '<p> \n'
@@ -258,6 +271,10 @@ def erstelle_index_html() -> bool:
 
             # toml_doc wieder bereit machen für die nächste Datei
             toml_doc = ''
+
+            # die verlinkten Dateien erstellen
+            erstelle_html_audio(toml_dateiname=datei)
+            erstelle_html_text(toml_dateiname=datei)
 
 
     # noch ein Muster
@@ -345,7 +362,7 @@ def formatiere_text(text_roh: str) -> str:
     # satzweise durch den Text gehen
     text_saetze = text_roh.split('\n')
     for satz in text_saetze:
-        print(satz)
+        # print(satz)
         if satz == '':
             text_formatiert += '</p>\n<p>\n'
         else:
@@ -376,6 +393,7 @@ def normalisiere_text(text_roh: str) -> str:
     # alle 'wilden' \n ersetzen
     text_roh = text_roh.replace('\n', ' ')
 
+    # Text in Sätze zerlegen
     # Infos: https://github.com/nipunsadvilkar/pySBD/tree/master
     seg = pysbd.Segmenter(language="de", clean=False)
     saetze = seg.segment(text=text_roh)
@@ -421,11 +439,15 @@ def klicke_button_fragen_suchen() ->bool:
     :return: True, wenn alles OK
     """
 
-    print('\t klicke_button_fragen_suchen')
+    print('\n\t klicke_button_fragen_suchen')
 
     # Datei wählen
     pfad_zu_textdatei = waehle_text_datei()
-    # OK print(pfad_zu_textdatei)
+    
+    # wenn keine Datei gewählt
+    if pfad_zu_textdatei == '':
+        print('Keine Datei gewählt.')
+        return False
 
     # Lesen die Text-Datei
     with open(pfad_zu_textdatei, 'r') as datei:
@@ -465,11 +487,15 @@ def klicke_button_text_bearbeiten() -> bool:
     :return: True, wenn alles OK
     """
 
-    print('\t klicke_button_text_bearbeiten')
+    print('\n\t klicke_button_text_bearbeiten')
 
     # Datei wählen
     pfad_zu_textdatei = waehle_text_datei()
-    # OK print(pfad_zu_textdatei)
+    
+    # wenn keine Datei gewählt
+    if pfad_zu_textdatei == '':
+        print('Keine Datei gewählt.')
+        return False
 
     # Fenster zum Bearbeiten öffnen
     zeige_fenster_extern(pfad_zu_toml_datei=pfad_zu_textdatei)
@@ -486,7 +512,7 @@ def klicke_button_text_erstellen() -> bool:
     :return: True, wenn alles OK
     """
 
-    print('\t klicke_button_text_erstellen')
+    print('\n\t klicke_button_text_erstellen')
 
     # leere Text-Datei (im toml-Format) erstellen
     pfad_zur_neuen_datei = erstelle_leere_text_datei()
@@ -507,11 +533,16 @@ def klicke_button_text_normalisieren() -> bool:
     :return: True, wenn alles OK
     """
 
-    print('\t klicke_button_text_normalisieren')
+    print('\n\t klicke_button_text_normalisieren')
 
     # zu normalisierenden Text auswählen
     # Datei wählen
     pfad_zu_textdatei = waehle_text_datei()
+
+    # wenn keine Datei gewählt
+    if pfad_zu_textdatei == '':
+        print('Keine Datei gewählt.')
+        return False
 
     # Lesen die Text-Datei
     with open(pfad_zu_textdatei, 'r') as datei:
@@ -542,10 +573,15 @@ def klicke_button_text_zu_audio() -> bool:
     :return: True, wenn alles OK.
     """
 
-    print('\t klicke_button_text_zu_audio')
+    print('\n\t klicke_button_text_zu_audio')
 
     # Datei wählen
     pfad_zu_textdatei = waehle_text_datei()
+
+    # wenn keine Datei gewählt
+    if pfad_zu_textdatei == '':
+        print('Keine Datei gewählt.')
+        return False
 
     # Lesen die Text-Datei
     with open(pfad_zu_textdatei, 'r') as datei:
@@ -571,7 +607,7 @@ def klicke_button_text_zu_audio() -> bool:
     # OK print(datei_name)
 
     # Pfad der Audio-Datei
-    pfad_zu_audiodatei = os.path.join(WORKING_DIR, 'audio', datei_name + '.mp3')
+    pfad_zu_audiodatei = os.path.join(WORKING_DIR, 'mat', datei_name + '.mp3')
 
     # Anfrage an edge_tts
     communicate = edge_tts.Communicate(text=text_roh, voice=stimme)
@@ -580,6 +616,79 @@ def klicke_button_text_zu_audio() -> bool:
     warte_fenster.destroy()
 
     return True
+
+
+# -----------------------------------------------------------------------------
+def klicke_button_texte_ins_internet() -> bool:
+    """
+    Stellt die Texte ins Internet.
+
+    :return: True, wenn alles OK.
+    """
+
+    print('\n\t klicke_button_texte_ins_internet')
+
+    aktuelle_zeit = datetime.datetime.now().strftime("%Y-%m-%d---%H-%M")
+
+    mache_lokalen_commit(kommentar=aktuelle_zeit)
+
+    return True
+
+
+# -----------------------------------------------------------------------------
+def klicke_button_texte_zu_html() -> bool:
+    """
+    Erstellt aus allen Texten index.html und 
+        die zugehörigen Seiten im Ordnern mat.
+
+    :return: True, wenn alles OK.
+    """
+
+    print('\n\t klicke_button_texte_zu_html')
+
+    erstelle_index_html()
+
+    return True
+
+
+# -----------------------------------------------------------------------------
+def mache_lokalen_commit(kommentar: str) -> bool:
+    """
+    Mach ein Commit der lokalen Dateien
+    :param kommentar: Kommentar für den commit
+    :return: True, wenn alles OK
+    """
+
+    print('\t mache_lokalen_commit')
+
+    repo_pfad = WORKING_DIR
+
+    try:
+        # Schritt 0: git config --global user.name "user.name" - User bestimmen
+        # Schritt 0: git config --global user.email "user.email" - User bestimmen
+        # git_befehl = ['git', 'config', '--global', 'user.name', constanten.GIT_USER]
+        # subprocess.run(git_befehl, check=True)
+        # git_befehl = ['git', 'config', '--global', 'user.email', constanten.GIT_USER_MAIL]
+        # subprocess.run(git_befehl, check=True)
+
+        # Schritt 1: git add . - Alle Änderungen hinzufügen
+        git_befehl = ["git", "-C", repo_pfad, "add", "."]
+        subprocess.run(git_befehl, check=True)
+
+        # Schritt 2: git commit -m "Nachricht" - Änderungen committen
+        git_befehl = ["git", "-C", repo_pfad, "commit", "-m", kommentar]
+        subprocess.run(git_befehl, check=True)
+
+        print("\t Änderungen erfolgreich committed")
+
+        return True
+
+    except subprocess.CalledProcessError as e:
+        print(f"\t Achtung: Fehler beim Ausführen von Git: {e}")
+
+        return False
+
+
 
 
 # -----------------------------------------------------------------------------
@@ -594,6 +703,9 @@ def waehle_text_datei() -> str:
     pfad_zu_textdatei = gz.select_file(title='Wähle eine Text-Datei',
                                        folder=WORKING_DIR,
                                        filetypes=[['toml-Dateien', '*.toml']])
+    
+    if pfad_zu_textdatei == '':
+        return ''
 
     return pfad_zu_textdatei
 
