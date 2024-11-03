@@ -628,7 +628,7 @@ def klicke_button_texte_ins_internet() -> bool:
 
     print('\n\t klicke_button_texte_ins_internet')
 
-    aktuelle_zeit = datetime.datetime.now().strftime("%Y-%m-%d, %H-%M")
+    aktuelle_zeit = datetime.datetime.now().strftime("%Y-%m-%d, %H:%M")
 
     mache_lokalen_commit(kommentar=aktuelle_zeit)
 
@@ -703,7 +703,7 @@ def mache_push_zu_github() -> bool:
     repo_pfad = WORKING_DIR
     repo_name = 'texte-lesen-ho-ren'
     GIT_USER = 'lehr-laemp'
-    GITHUB_ACCESS_TOKEN = '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'
+    GITHUB_ACCESS_TOKEN = os.environ.get('GITHUB_ACCESS_TOKEN')
 
     try:
         
