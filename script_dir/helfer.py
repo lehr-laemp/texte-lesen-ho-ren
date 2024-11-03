@@ -681,7 +681,7 @@ def mache_lokalen_commit(kommentar: str) -> bool:
         git_befehl = ["git", "-C", repo_pfad, "commit", "-m", kommentar]
         subprocess.run(git_befehl, check=True)
 
-        print("\t Änderungen erfolgreich committed")
+        print("\n\t Änderungen erfolgreich committed")
 
         return True
 
@@ -717,6 +717,8 @@ def mache_push_zu_github() -> bool:
         # ddd
         git_befehl = ['git', 'push', '--set-upstream', 'origin', 'master']
         subprocess.run(git_befehl, check=True)
+
+        print('\n\t Änderungen erfolgreich gepusht.')
 
         return True
 
