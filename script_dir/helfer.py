@@ -638,7 +638,7 @@ def klicke_button_texte_ins_internet() -> bool:
 
     # warte etwas und zeige dann die erstellte Seite
     
-    gz.info(title='Info', text='Bis die Seiten aktualisiert sind, dauert es einige Minuten')
+    gz.info(title='Info', text='Bis die Seiten aktualisiert sind, dauert es einige Minuten.')
 
     webbrowser.open(url='https://lehr-laemp.github.io/texte-lesen-ho-ren/')
 
