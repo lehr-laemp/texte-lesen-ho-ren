@@ -1,0 +1,156 @@
+# ##########################################
+
+# Name der toml-Datei
+dateiname = "waldmann"
+
+# Titel des Textes
+titel = "Der alte Mann im Wald"
+
+# Quelle des Textes
+quelle = "ChatGPT"
+
+# Hier kommt der Text
+text = """Am Rande eines dichten Waldes stand ein alter, bunter Wohnwagen. 
+Darin lebte Herr Pumpernickel, ein älterer Herr mit einem langen, weißen Bart und einer Brille, die immer ein bisschen schief auf seiner Nase saß. 
+Herr Pumpernickel liebte die Ruhe im Wald. 
+Jeden Abend setzte er sich mit einer Tasse dampfendem Tee in seinen Schaukelstuhl, schaute in die Sterne und lauschte den Geräuschen der Natur.  
+Eines Nachts jedoch durchbrach ein lautes, klägliches Miauuuuu die Stille. 
+Herr Pumpernickel richtete sich erschrocken auf und spitzte die Ohren. 
+Da war es wieder – ein verzweifeltes Katzengeschrei, das aus dem dunklen Wald zu kommen schien.  
+„Oh je, das klingt nach einem kleinen Kätzchen in Not!“, murmelte Herr Pumpernickel und griff nach seiner Laterne. 
+Mit leuchtenden Augen und einem Funken Abenteuerlust machte er sich auf den Weg in den Wald, dem Miauen nach. 
+Doch der Wald war dicht und dunkel, und das Geräusch schien von überall zu kommen.  
+Gerade, als Herr Pumpernickel dachte, er würde den Weg nicht finden, blitzte plötzlich ein zarter, glitzernder Schein auf. 
+Vor ihm schwebte eine kleine, leuchtende Gestalt – eine Fee mit silbernen Flügeln und einem freundlichen Lächeln.  
+„Guten Abend, Herr Pumpernickel“, sagte die Fee mit sanfter Stimme. 
+„Ich bin Lili, die gute Fee des Waldes. Es scheint, dass du meine Hilfe brauchst.“  Herr Pumpernickel nickte erleichtert. 
+„Ja, bitte! Ein Kätzchen ruft um Hilfe, aber ich finde es nicht.“  Die Fee Lili schloss die Augen, lauschte und lächelte dann. 
+„Ich weiß, wo es ist. Folge mir!“  Zusammen gingen sie tiefer in den Wald, bis sie an einem großen Baum ankamen. 
+Ganz oben, auf einem Ast, saß ein kleines, zitterndes Kätzchen mit großen Augen.  
+„Oh, armes Ding“, murmelte Herr Pumpernickel.  
+Mit einem sanften Winken ihrer Hand ließ die Fee das Kätzchen langsam und sicher vom Baum gleiten und landete sanft in Herrn Pumpernickels Armen. 
+Das Kätzchen schnurrte und schmiegte sich an ihn.  
+„Vielen Dank, Lili“, sagte Herr Pumpernickel dankbar zur Fee.  
+„Gerne, Herr Pumpernickel“, antwortete Lili. 
+„Und vergiss nicht, der Wald ist immer für dich da – mit ein bisschen Magie.“  Mit einem letzten, glitzernden Funkeln verschwand Lili, und Herr Pumpernickel brachte das Kätzchen in seinen warmen Wohnwagen. 
+Seit diesem Tag wohnte das kleine Kätzchen bei ihm, und jeden Abend, wenn die Sterne leuchteten, erzählte er ihm Geschichten von seiner magischen Nacht im Wald.
+"""
+
+# Fragen zum Text (von KI erzeugt)
+fragen = """
+<h2>Fragen</h2>
+<p>
+<ol>
+    <li>Wo steht der Wohnwagen von Herrn Pumpernickel?</li>
+    <li>Wie sieht Herr Pumpernickel aus?</li>
+    <li>Was macht Herr Pumpernickel jeden Abend?</li>
+    <li>Was störte die Ruhe in der Nacht?</li>
+    <li>Wie reagiert Herr Pumpernickel auf das Miauen?</li>
+    <li>Wer ist die Fee, die Herr Pumpernickel trifft?</li>
+    <li>Was fragt Herr Pumpernickel die Fee um Hilfe?</li>
+    <li>Wo findet die Fee das Kätzchen?</li>
+    <li>Was passiert, als die Fee das Kätzchen vom Baum holt?</li>
+    <li>Wie fühlt sich Herr Pumpernickel, als er das Kätzchen in seinen Armen hält?</li>
+    <li>Was sagt die Fee zu Herrn Pumpernickel über den Wald?</li>
+    <li>Was geschieht, als die Fee verschwindet?</li>
+</ol>
+</p>
+"""
+
+# Antworten zu den Fragen
+antworten = """
+<h2>Antworten</h2>
+<p>
+    <details>
+        <ol>
+            <li>Wo steht der Wohnwagen von Herrn Pumpernickel? <br>
+                Der Wohnwagen steht am Rande eines dichten Waldes.</li>
+            <li>Wie sieht Herr Pumpernickel aus? <br>
+                Er ist ein älterer Herr mit einem langen, weißen Bart und einer schiefen Brille.</li>
+            <li>Was macht Herr Pumpernickel jeden Abend? <br>
+                Er sitzt in seinem Schaukelstuhl, trinkt Tee und schaut in die Sterne.</li>
+            <li>Was störte die Ruhe in der Nacht? <br>
+                Ein lautes, klägliches Miauen störte die Stille.</li>
+            <li>Wie reagiert Herr Pumpernickel auf das Miauen? <br>
+                Er wird erschrocken und spitzt die Ohren.</li>
+            <li>Wer ist die Fee, die Herr Pumpernickel trifft? <br>
+                Die Fee heisst Lili und ist die gute Fee des Waldes.</li>
+            <li>Was fragt Herr Pumpernickel die Fee um Hilfe? <br>
+                Er fragt, ob sie ihm helfen kann, das Kätzchen zu finden.</li>
+            <li>Wo findet die Fee das Kätzchen? <br>
+                Die Fee findet das Kätzchen oben auf einem großen Baum.</li>
+            <li>Was passiert, als die Fee das Kätzchen vom Baum holt? <br>
+                Das Kätzchen gleitet sanft und sicher in die Arme von Herrn Pumpernickel.</li>
+            <li>Wie fühlt sich Herr Pumpernickel, als er das Kätzchen in seinen Armen hält? <br>
+                Er fühlt sich dankbar und glücklich.</li>
+            <li>Was sagt die Fee zu Herrn Pumpernickel über den Wald? <br>
+                Sie sagt, dass der Wald immer für ihn da ist – mit ein bisschen Magie.</li>
+            <li>Was geschieht, als die Fee verschwindet? <br>
+                Herr Pumpernickel bringt das Kätzchen in seinen warmen Wohnwagen.</li>
+        </ol>
+    </details>
+</p>
+"""
+
+# Rückmeldung der KI
+ki_antwort = """**Gedanken zur Erstellung der Fragen:**
+Ich möchte Fragen stellen, die das genaue Lesen des Textes fördern und das Verständnis der Geschichte prüfen. Es sollten sowohl Fragen zu den Charakteren, Handlungselementen als auch zu den Emotionen und der Umgebung gestellt werden. Ich werde darauf achten, dass die Fragen einfach und klar formuliert sind.
+
+**Fragen in HTML-Liste:**
+
+```html
+<h2>Fragen</h2>
+<p>
+<ol>
+    <li>Wo steht der Wohnwagen von Herrn Pumpernickel?</li>
+    <li>Wie sieht Herr Pumpernickel aus?</li>
+    <li>Was macht Herr Pumpernickel jeden Abend?</li>
+    <li>Was störte die Ruhe in der Nacht?</li>
+    <li>Wie reagiert Herr Pumpernickel auf das Miauen?</li>
+    <li>Wer ist die Fee, die Herr Pumpernickel trifft?</li>
+    <li>Was fragt Herr Pumpernickel die Fee um Hilfe?</li>
+    <li>Wo findet die Fee das Kätzchen?</li>
+    <li>Was passiert, als die Fee das Kätzchen vom Baum holt?</li>
+    <li>Wie fühlt sich Herr Pumpernickel, als er das Kätzchen in seinen Armen hält?</li>
+    <li>Was sagt die Fee zu Herrn Pumpernickel über den Wald?</li>
+    <li>Was geschieht, als die Fee verschwindet?</li>
+</ol>
+</p>
+```
+
+**Fragen mit Antworten in HTML-Liste:**
+
+```html
+<h2>Antworten</h2>
+<p>
+    <details>
+        <ol>
+            <li>Wo steht der Wohnwagen von Herrn Pumpernickel? <br>
+                Der Wohnwagen steht am Rande eines dichten Waldes.</li>
+            <li>Wie sieht Herr Pumpernickel aus? <br>
+                Er ist ein älterer Herr mit einem langen, weißen Bart und einer schiefen Brille.</li>
+            <li>Was macht Herr Pumpernickel jeden Abend? <br>
+                Er sitzt in seinem Schaukelstuhl, trinkt Tee und schaut in die Sterne.</li>
+            <li>Was störte die Ruhe in der Nacht? <br>
+                Ein lautes, klägliches Miauen störte die Stille.</li>
+            <li>Wie reagiert Herr Pumpernickel auf das Miauen? <br>
+                Er wird erschrocken und spitzt die Ohren.</li>
+            <li>Wer ist die Fee, die Herr Pumpernickel trifft? <br>
+                Die Fee heisst Lili und ist die gute Fee des Waldes.</li>
+            <li>Was fragt Herr Pumpernickel die Fee um Hilfe? <br>
+                Er fragt, ob sie ihm helfen kann, das Kätzchen zu finden.</li>
+            <li>Wo findet die Fee das Kätzchen? <br>
+                Die Fee findet das Kätzchen oben auf einem großen Baum.</li>
+            <li>Was passiert, als die Fee das Kätzchen vom Baum holt? <br>
+                Das Kätzchen gleitet sanft und sicher in die Arme von Herrn Pumpernickel.</li>
+            <li>Wie fühlt sich Herr Pumpernickel, als er das Kätzchen in seinen Armen hält? <br>
+                Er fühlt sich dankbar und glücklich.</li>
+            <li>Was sagt die Fee zu Herrn Pumpernickel über den Wald? <br>
+                Sie sagt, dass der Wald immer für ihn da ist – mit ein bisschen Magie.</li>
+            <li>Was geschieht, als die Fee verschwindet? <br>
+                Herr Pumpernickel bringt das Kätzchen in seinen warmen Wohnwagen.</li>
+        </ol>
+    </details>
+</p>
+```"""
+

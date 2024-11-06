@@ -4,6 +4,7 @@ helfer.py
 """
 # -----------------------------------------------------------------------------
 # import
+import pysbd.utils
 import tomlkit
 import guizero as gz
 from openai import OpenAI
@@ -83,6 +84,39 @@ HTML_KOPF = """
 <body>
 
 """
+
+
+# -----------------------------------------------------------------------------
+def berechne_text_schwierigkeit(text: str) -> float:
+    """
+    Berechnet den LIX-Wert des Textes.
+        Formel: LIX = (Alle Wörter)/(Alle Sätze) + (Lange Wörter = Wörter mit mehr als 6 Buchstaben)/(alle Wörter)*100
+        Unter 40: Kinder- und Jugendliteratur (z.B. TKKG)
+        40 bis 50: Belletristik (z.B. Romane)
+
+    :param: text: der zu berechnende Wert
+    :return: der berechnete Wert als Dezimalzahl
+    """
+
+    print('\t\t berechne_text_schwierigkeit')
+    print('Nach LIX: 315 Wörter, 28 Sätze, 26 % lange Wörter, LIX 37.3')
+
+    # Anzahl Wörter
+    # todo
+    text_liste = text.split()
+    print(text_liste)
+    anzahl_woerter = len(text_liste)
+    
+
+    # Anzahl Sätze
+    seg = pysbd.Segmenter(language="de", clean=False)
+    saetze = seg.segment(text=text)
+    anzahl_saetze = len(saetze)
+    
+    # Ausgabe als Kontrolle
+    print('Nach LIX: 315 Wörter, 28 Sätze, 26 % lange Wörter, LIX 37.3')
+    print(f'Alle Wörter: {anzahl_woerter}, Anzahl Sätze: {anzahl_saetze}')
+
 
 
 # -----------------------------------------------------------------------------
@@ -372,40 +406,6 @@ def formatiere_text(text_roh: str) -> str:
     text_formatiert += '</p>'        
 
     return text_formatiert
-
-
-# -----------------------------------------------------------------------------
-def normalisiere_text(text_roh: str) -> str:
-    """
-    Normalisiert den Text: 
-        Jeder Satz kommt auf eine neue Linie.
-        Alle '\n' dazwischen werden gelöscht 
-    
-
-    :param text_roh: der unformatierte Text
-    :return: den formatierten Text 
-    """
-
-    print('\t\t\t normalisiere_text')
-
-    # print(text_roh[0:500], '\n\n')
-
-    text_return = ''
-
-    # alle 'wilden' \n ersetzen
-    text_roh = text_roh.replace('\n', ' ')
-
-    # Text in Sätze zerlegen
-    # Infos: https://github.com/nipunsadvilkar/pySBD/tree/master
-    seg = pysbd.Segmenter(language="de", clean=False)
-    saetze = seg.segment(text=text_roh)
-    # print(saetze)
-
-    for satz in saetze:
-        text_return += satz + '\n'
-
-    # print(text_return)    
-    return text_return
 
 
 # -----------------------------------------------------------------------------
@@ -735,6 +735,40 @@ def mache_push_zu_github() -> bool:
         print(f"Fehler beim Ausführen von Git: {e}")
 
         return False
+
+
+# -----------------------------------------------------------------------------
+def normalisiere_text(text_roh: str) -> str:
+    """
+    Normalisiert den Text: 
+        Jeder Satz kommt auf eine neue Linie.
+        Alle '\n' dazwischen werden gelöscht 
+    
+
+    :param text_roh: der unformatierte Text
+    :return: den formatierten Text 
+    """
+
+    print('\t\t\t normalisiere_text')
+
+    # print(text_roh[0:500], '\n\n')
+
+    text_return = ''
+
+    # alle 'wilden' \n ersetzen
+    text_roh = text_roh.replace('\n', ' ')
+
+    # Text in Sätze zerlegen
+    # Infos: https://github.com/nipunsadvilkar/pySBD/tree/master
+    seg = pysbd.Segmenter(language="de", clean=False)
+    saetze = seg.segment(text=text_roh)
+    # print(saetze)
+
+    for satz in saetze:
+        text_return += satz + '\n'
+
+    # print(text_return)    
+    return text_return
 
 
 # -----------------------------------------------------------------------------
