@@ -16,12 +16,12 @@ import re
 from random import choice
 import subprocess
 import datetime
-import time
+import string
 import webbrowser
 
 
 # -----------------------------------------------------------------------------
-APP = gz.App(title='Training Verstehen', width=230, height= 350)
+APP = gz.App(title='Training Verstehen', width=230, height= 400)
 WORKING_DIR = os.getcwd()
 # Welches Modell? https://openai.com/api/pricing/ 
 OPENAI_MODELL = 'gpt-4o-mini'
@@ -87,7 +87,7 @@ HTML_KOPF = """
 
 
 # -----------------------------------------------------------------------------
-def berechne_text_schwierigkeit(text: str) -> float:
+def berechne_text_schwierigkeit(text: str) -> int:
     """
     Berechnet den LIX-Wert des Textes.
         Formel: LIX = (Alle Wörter)/(Alle Sätze) + (Lange Wörter = Wörter mit mehr als 6 Buchstaben)/(alle Wörter)*100
@@ -95,27 +95,39 @@ def berechne_text_schwierigkeit(text: str) -> float:
         40 bis 50: Belletristik (z.B. Romane)
 
     :param: text: der zu berechnende Wert
-    :return: der berechnete Wert als Dezimalzahl
+    :return: der berechnete Wert als Integer-Zahl
     """
 
     print('\t\t berechne_text_schwierigkeit')
-    print('Nach LIX: 315 Wörter, 28 Sätze, 26 % lange Wörter, LIX 37.3')
 
     # Anzahl Wörter
-    # todo
     text_liste = text.split()
-    print(text_liste)
-    anzahl_woerter = len(text_liste)
+    # print(text_liste)
+    anzahl_worte = len(text_liste)
     
-
     # Anzahl Sätze
     seg = pysbd.Segmenter(language="de", clean=False)
     saetze = seg.segment(text=text)
     anzahl_saetze = len(saetze)
-    
+
+    # Anzahl lange Wörter
+    anzahl_lange_worte = 0
+    for wort in text_liste:
+        # alle Satzzeichen entfernen
+        # https://stackoverflow.com/questions/265960/best-way-to-strip-punctuation-from-a-string
+        table = str.maketrans(dict.fromkeys(string.punctuation))
+        wort_ohne = wort.translate(table) 
+        # OK print(wort_ohne)
+        if len(wort_ohne) > 6:
+            anzahl_lange_worte += 1
+
+    lix = int(anzahl_worte / anzahl_saetze + anzahl_lange_worte / anzahl_worte * 100)  
+
     # Ausgabe als Kontrolle
-    print('Nach LIX: 315 Wörter, 28 Sätze, 26 % lange Wörter, LIX 37.3')
-    print(f'Alle Wörter: {anzahl_woerter}, Anzahl Sätze: {anzahl_saetze}')
+    # print('Nach LIX: 315 Wörter, 28 Sätze, 26 % lange Wörter, LIX 37.3')
+    # print(f'Alle Wörter: {anzahl_worte}, Anzahl Sätze: {anzahl_saetze}, Anzahl langer Wörter: {anzahl_lange_worte/anzahl_worte*100:.2f}, LIX: {lix:.2f}')
+
+    return lix
 
 
 
@@ -435,6 +447,21 @@ def hole_fragen_von_openai(text: str) -> bool:
 
 
 # -----------------------------------------------------------------------------
+def klicke_button_budget_bei_openai() -> bool:
+    """
+    Öffnet die Seite bei OpenAI, wo man den Verbrauch und das Konto ansehen kann.
+    :return: True, wenn alles OK.
+    """
+
+    print('\n\t klicke_button_budget_bei_openai')
+
+    webbrowser.open(url='https://platform.openai.com/settings/organization/general')
+
+
+    return True
+
+
+# -----------------------------------------------------------------------------
 def klicke_button_fragen_suchen() ->bool:
     """
     Startet alle Prozesse, wenn der Button "Fragen suchen" geklickt wird
@@ -520,8 +547,7 @@ def klicke_button_text_erstellen() -> bool:
     pfad_zur_neuen_datei = erstelle_leere_text_datei()
 
     # leere Text-Datei zum Bearbeiten öffnen
-    zeige_fenster_fuer_texte(titel='Neuer Text erstellen',
-                             pfad_zur_toml_datei=pfad_zur_neuen_datei)
+    zeige_fenster_fuer_texte(pfad_zur_toml_datei=pfad_zur_neuen_datei)
 
     return True
 
@@ -564,6 +590,91 @@ def klicke_button_text_normalisieren() -> bool:
     # und speichern
     with open(pfad_zu_textdatei, 'w') as datei:
         datei.write(toml_content)
+
+    return True
+
+
+# -----------------------------------------------------------------------------
+def klicke_button_text_vereinfachen() -> bool:
+    """
+    Vereinfacht einen Text
+    :return: True, wenn alles OK.
+    """
+
+    print('\n\t klicke_button_text_vereinfachen')
+
+    # Datei wählen
+    pfad_zu_textdatei = waehle_text_datei()
+
+    # wenn keine Datei gewählt
+    if pfad_zu_textdatei == '':
+        print('Keine Datei gewählt.')
+        return False
+
+    # Lesen die Text-Datei
+    with open(pfad_zu_textdatei, 'r') as datei:
+        toml_content = datei.read()
+
+    # Parsen des TOML-Inhalts
+    toml_doc = tomlkit.parse(toml_content)
+    text_roh = toml_doc['text']    
+
+    lix_alt = berechne_text_schwierigkeit(toml_doc['text'])
+
+    # Zeigt ein Fenster mit einem Hinweis
+    warte_fenster = gz.Window(master=APP,
+                              title='Der Text wird vereinfacht: Das dauert einen Moment.',
+                              width=550, height=20)
+    
+    # KI-Auftrag
+    user_content = '''
+Ich bin Lehrerin für 10-jährige bis 12-jährige Schüler in der Schweiz.
+Viele sprechen zu Hause eine andere Sprache als Deutsch.
+Und viele lesen auch nicht so gut.
+Ich benötige deshalb Texte in einfacher Sprache mit wenigen Fachwörtern.
+
+Bitte schreibe diesen Text in einfacher Sprache, so dass meine Schüler ihn gut verstehen können.
+Bitte verwende die Schweizer-Deutsche Rechtschreibung mit ss statt ß.
+
+Das ist der Text:
+'''
+    
+    # openai initialisieren
+    api_key = os.environ.get('OPENAI_API_KEY')
+    client = OpenAI(api_key=api_key, )
+
+    # openai anfragen
+    completion = client.chat.completions.create(
+        model=OPENAI_MODELL,
+        messages=[
+            {'role': 'system', 'content': KI_SYSTEM_PROMPT},
+            {'role': 'user', 'content': user_content + text_roh}
+        ]
+    )
+
+    text_vereinfacht = normalisiere_text(text_roh=completion.choices[0].message.content)
+
+    lix_neu = berechne_text_schwierigkeit(text_vereinfacht)
+
+    toml_doc['text'] = tomlkit.string(text_vereinfacht, multiline=True)
+
+    # toml-Daten dumpen ...
+    toml_content = tomlkit.dumps(toml_doc)
+    # OK print(toml_string)
+
+    # und speichern
+    with open(pfad_zu_textdatei, 'w') as datei:
+        datei.write(toml_content)
+
+    warte_fenster.destroy()   
+
+    # Info zu LIX Lesbarkeit
+    info_text = f'Der Lesbarkeitsindex LIX des originalen Textes war {lix_alt},\n'
+    info_text += f'der Lesbarkeitsindex LIX des neuen Textes ist {lix_neu}.'    
+    gz.info(title='Info', text=info_text)        
+
+    # öffne Fenster zum Bearbeiten des Textes
+    zeige_fenster_extern(pfad_zu_toml_datei=pfad_zu_textdatei)
 
     return True
 
@@ -809,20 +920,11 @@ def zeige_fenster_extern(pfad_zu_toml_datei: str) -> bool:
 
 
 # -----------------------------------------------------------------------------
-def zeige_fenster_fuer_texte(titel: str, pfad_zur_toml_datei: str) -> bool:
+def zeige_fenster_fuer_texte(pfad_zur_toml_datei: str) -> bool:
     """
-    Zeigt ein Fenster für die Texte an.
-
-        Es gibt 2 Möglichkeiten:
-            - Der Text ist neu: vorlage.toml wird angezeigt.
-                - Die Datei muss mit einem neuen Namen gespeichert werden
-                - vorlage.toml muss gelöscht werden
-            - Der Text muss bearbeitet werden:
-                - eine bestehende Datei wird gezeigt
-                - und auch wieder gespeichert
+    Zeigt ein Fenster für einen neuen Texte an.
 
     :param pfad_zur_toml_datei: der Pfad zur leeren Text-toml-Datei
-    :param titel: je nach Aufgabe: 'Neuer Text erstellen' oder 'Text bearbeiten'
     :return: True, wenn alles OK ist
     """
 
@@ -839,8 +941,7 @@ def zeige_fenster_fuer_texte(titel: str, pfad_zur_toml_datei: str) -> bool:
         text_fenster.destroy()
 
         # lösche vorlage.toml
-        if titel == 'Neuer Text erstellen':
-            os.remove(pfad_zur_toml_datei)
+        os.remove(pfad_zur_toml_datei)
 
         return True
 
@@ -855,50 +956,50 @@ def zeige_fenster_fuer_texte(titel: str, pfad_zur_toml_datei: str) -> bool:
         :return: True, wenn alles OK
         """
 
-        # wenn neuer Text
-        if titel == 'Neuer Text erstellen':
+        # Bestimme neuen Dateiname aus dem Titel
+        titel_roh = str(text_feld.tk.get('4.13', '4.end- 1 chars'))
+        pfad_zur_toml_datei_neu = os.path.join(WORKING_DIR, 'texte', titel_roh + '.toml')
 
-            # Bestimme neuen Dateiname aus dem Titel
-            titel_roh = str(text_feld.tk.get('4.13', '4.end- 1 chars'))
-            pfad_zur_toml_datei_neu = os.path.join(WORKING_DIR, 'texte', titel_roh + '.toml')
+        # wenn Titel schon vorhanden?
+        if os.path.exists(pfad_zur_toml_datei_neu):
+            gz.warn(title='Achtung', text='Datei mit diesem Titel ist schon vorhanden.')
+            return False
 
-            # wenn Titel schon vorhanden?
-            if os.path.exists(pfad_zur_toml_datei_neu):
-                gz.warn(title='Achtung', text='Datei mit diesem Titel ist schon vorhanden.')
-                return False
+        # neue Datei speichern
+        with open(pfad_zur_toml_datei_neu, 'w') as datei:
+            datei.write(text_feld.tk.get('1.0', 'end'))
 
-            # neue Datei speichern
-            with open(pfad_zur_toml_datei_neu, 'w') as datei:
-                datei.write(text_feld.tk.get('1.0', 'end'))
+        # Vorlage löschen
+        os.remove(pfad_zur_toml_datei)
 
-            # Vorlage löschen
-            os.remove(pfad_zur_toml_datei)
+        # Text normalisieren beim Speichern
+        # Lesen die Text-Datei
+        with open(pfad_zur_toml_datei_neu, 'r') as datei:
+            toml_content = datei.read()
 
-            # Text normalisieren beim Speichern
-            # Lesen die Text-Datei
-            with open(pfad_zur_toml_datei_neu, 'r') as datei:
-                toml_content = datei.read()
+        # Parsen des TOML-Inhalts
+        toml_doc = tomlkit.parse(toml_content)
+        text_roh = toml_doc['text']    
 
-            # Parsen des TOML-Inhalts
-            toml_doc = tomlkit.parse(toml_content)
-            text_roh = toml_doc['text']    
+        # Text normalisieren
+        toml_doc['text'] = tomlkit.string(normalisiere_text(text_roh=text_roh), multiline=True)
 
-            # Text normalisieren
-            toml_doc['text'] = tomlkit.string(normalisiere_text(text_roh=text_roh), multiline=True)
-
-            # toml-Daten dumpen ...
-            toml_content = tomlkit.dumps(toml_doc)
-
-            # und speichern
-            with open(pfad_zur_toml_datei_neu, 'w') as datei:
-                datei.write(toml_content)
-            
-        # wenn bestehender Text
+        # Schwierigkeit des Textes abfragen
+        text_schwierigkeit_lix = berechne_text_schwierigkeit(toml_doc['text'])
+        if text_schwierigkeit_lix > 35:
+            info_text = f'Der Lesbarkeitsindex LIX ist {text_schwierigkeit_lix}.\nVielleicht muss der Text vereinfacht werden.'
         else:
-            # Datei speichern
-            with open(pfad_zur_toml_datei, 'w') as datei:
-                datei.write(text_feld.tk.get('1.0', 'end'))
+            info_text = f'Der Lesbarkeitsindex LIX ist {text_schwierigkeit_lix}. \nDer Text sollte gut lesbar sein.'   
 
+        gz.info(title='Info', text=info_text)     
+
+        # toml-Daten dumpen ...
+        toml_content = tomlkit.dumps(toml_doc)
+
+        # und speichern
+        with open(pfad_zur_toml_datei_neu, 'w') as datei:
+            datei.write(toml_content)
+            
         # Fenster schliessen
         text_fenster.destroy()
 
@@ -957,7 +1058,7 @@ def zeige_fenster_fuer_texte(titel: str, pfad_zur_toml_datei: str) -> bool:
 
     # -------------------------------------------------------------------------
     # Fenster erstellen
-    text_fenster = gz.Window(master=APP, title=titel,
+    text_fenster = gz.Window(master=APP, title='Neuer Text',
                              width=600, height=700)
 
     text_feld = gz.TextBox(master=text_fenster, text=toml_string,
@@ -976,5 +1077,5 @@ def zeige_fenster_fuer_texte(titel: str, pfad_zur_toml_datei: str) -> bool:
 
     text_fenster.show(wait=True)
 
-    return True
+    return True   
 

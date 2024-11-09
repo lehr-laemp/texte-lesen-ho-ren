@@ -1,0 +1,47 @@
+# ##########################################
+
+# Name der toml-Datei
+dateiname = "test4"
+
+# Titel des Textes
+titel = "test4"
+
+# Quelle des Textes
+quelle = ""
+
+# Hier kommt der Text
+text = """Als die Glocke vom Kloster läutet, wacht die elfjährige Käthi auf.  
+Sie schüttelt das Stroh von ihrem Kleid und zieht sich schnell an.  
+Im Morgengrauen geht sie mit ihrer Mutter und ihren Geschwistern zur Kirche im Dorf.  
+Der Priester, Pater Gabriel, spricht ein Gebet auf Lateinisch und gibt den Segen.  
+Kurz danach, als die ersten Sonnenstrahlen ins Zimmer scheinen, essen alle kalten Getreidebrei.    
+Die jüngeren Geschwister und die Mutter arbeiten dann im Gemüsegarten vor dem Haus.  
+Käthi muss aufs Feld gehen.  
+Im Mai muss man alles Unkraut entfernen.  
+Käthi geht an der Gemeindewiese vorbei zum Dorfrand, wo die Felder sind.  
+Nachts hat es geregnet und die Erde unter ihren Füssen ist weich.  
+Mit einem spitzen Stück Holz lockert Käthi den Boden und zieht das Unkraut heraus.  
+Das ist nicht so anstrengend wie die Arbeit im März, wenn sie mit ihrem Vater den Acker bearbeitet.    
+Nach dem Mittagessen gibt ihr die Mutter drei tote Hühner und 20 Eier.  
+Das sind die Abgaben für das Kloster.  
+Käthi geht den Hügel hinauf und bringt alles zum Mönch Severin.  
+Dieser schickt sie dann zum Kräutergarten, um Steine aus den Beeten zu nehmen.    
+Dreimal in der Woche arbeitet Käthi hier ohne Bezahlung.  
+Die Arbeit im Kräutergarten ist spannender als die Arbeit im Dorf.  
+Käthi lernt neue Kräuter kennen und die Mönche erklären ihr, gegen welche Krankheiten sie helfen.    
+Den Gottesdienst am Abend besucht Käthi mit allen Dorfbewohnern in der Kirche.  
+Danach hilft sie der Mutter beim Kochen des Abendessens: Eintopf aus Erbsen, Speck und Rüben.  
+Im letzten Tageslicht beginnt Käthi noch, den Mantel ihres Vaters zu nähen.  
+Die Mutter spinnt Wolle zu Garn.  
+Doch als Käthi nichts mehr sehen kann, streut sie etwas frisches Stroh auf ihre Schlafecke und schläft sehr müde ein. 
+"""
+
+# Fragen zum Text (von KI erzeugt)
+fragen = """xxx"""
+
+# Antworten zu den Fragen
+antworten = """xxx"""
+
+# Rückmeldung der KI
+ki_antwort = """xxx"""
+

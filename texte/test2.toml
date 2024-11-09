@@ -1,0 +1,54 @@
+# ##########################################
+
+# Name der toml-Datei
+dateiname = "test2"
+
+# Titel des Textes
+titel = "test2"
+
+# Quelle des Textes
+quelle = ""
+
+# Hier kommt der Text
+text = """
+Die Paulskirche steht in Frankfurt.  
+Sie ist eine protestantische Kirche.  
+Das bedeutet, die Menschen hier glauben an Jesus Christus und gehören zu den evangelischen Kirchen.   
+Die Paulskirche ist sehr bekannt.  
+Hier hat sich früher das erste deutsche Parlament getroffen.  
+Ein Parlament ist eine Gruppe von wichtigen Menschen, die Gesetze machen.   
+Heute finden in der Paulskirche viele Veranstaltungen statt.  
+Zum Beispiel gibt es Konzerte, Reden und Preisverleihungen.  
+Die Paulskirche ist ein nationales Denkmal.  
+Das heisst, sie ist für ganz Deutschland wichtig.   
+Vor der Paulskirche stand eine alte Kirche.  
+Diese alte Kirche war aus dem Mittelalter.  
+Das Mittelalter ist eine Zeit, die vor vielen Hundert Jahren war.  
+Die alte Kirche war wichtig für die Protestanten in Frankfurt.  
+Aber sie war zu klein und zu alt.  
+Deshalb baute man sie ab, bevor sie umfallen konnte.  
+Der Bau der neuen Paulskirche dauerte fast 25 Jahre.  
+In dieser Zeit waren viele französische Soldaten in Frankfurt.  
+Sie gehörten zu Napoleon Bonaparte, einem berühmten französischen Führer.   
+Im Jahr 1833 wurde die neue Paulskirche eröffnet.  
+Sie wurde nach Paulus benannt.  
+Paulus war ein Freund von Jesus Christus.   
+Die Kirche wurde nicht nur für Gottesdienste genutzt.  
+Im Jahr 1913 gab es eine große Feier.  
+Man erinnerte sich an die Schlacht von Leipzig gegen Napoleon.  
+Eine Schlacht ist ein Kampf.  
+Im Zweiten Weltkrieg gab es viele Bomben.  
+Diese Bomben haben viele Gebäude in Frankfurt zerstört, auch die Paulskirche.  
+Aber die Kirche wurde wieder neu aufgebaut.  
+Heute finden in der Paulskirche keine Gottesdienste mehr statt.
+"""
+
+# Fragen zum Text (von KI erzeugt)
+fragen = """xxx"""
+
+# Antworten zu den Fragen
+antworten = """xxx"""
+
+# Rückmeldung der KI
+ki_antwort = """xxx"""
+
