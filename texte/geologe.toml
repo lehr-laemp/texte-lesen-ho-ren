@@ -1,0 +1,180 @@
+# ##########################################
+
+# Name der toml-Datei
+dateiname = "geologe"
+
+# Titel des Textes
+titel = "Der Geologe: Benno Baumgarten"
+
+# Quelle des Textes
+quelle = "www.science-on-stage.de"
+
+# Hier kommt der Text
+text = """
+Steine sind etwas wirklich Spannendes und ihr könnt sie überall finden: auf der Strasse, am See, im Wald, am Berg. 
+Habt ihr Steine schon einmal ganz genau betrachtet? 
+Gehören Steine auch zu euren Schätzen? 
+
+In Südtirol gibt es einen Forscher, der sich für Steine interessiert. 
+Er heisst Benno Baumgarten und ist Geologe. 
+Ein Geologe erforscht Steine und weiss sehr viel über sie. 
+
+Schon als Kind liebte Benno Steine. 
+Er sammelte viele und hütete sie wie einen Schatz. 
+Er versuchte zu erfahren, woher sie kommen, wie sie entstehen und ob es Geheimnisse und Geschichten über sie gibt. 
+
+Benno Baumgarten wurde am 24. Juni 1956 in Bozen geboren. 
+Als Kind lebte er mit seinen Eltern und seiner Grossmutter zusammen. 
+Seine Grossmutter war sehr geschickt und konnte sogar selbst Seife herstellen. 
+Benno wollte wie seine Grossmutter alles ausprobieren und so führte er schon früh verschiedene Experimente durch. 
+Benno gefiel es immer besser, Steine genau anzuschauen und etwas über sie herauszufinden. 
+Es faszinierte ihn, dass alle unterschiedlich waren. 
+Überall suchte er nach Steinen. 
+
+Sein Vater und sein Bruder waren Bergsteiger und brachten ihm oft Steine von den Wanderungen mit. 
+Er freute sich sehr über die vielen kleinen und unterschiedlichen Steine. 
+Besonders gut gefielen ihm Opale. 
+Opale sind Steine, die bunt schillern, wenn man sie bewegt. 
+Aus Opalen kann man Schmuck herstellen. 
+
+Je mehr Steine Benno hatte, umso mehr wollte er darüber erfahren. 
+Er befragte seinen Lehrer und einen Mann, der in seiner Nähe wohnte. 
+Dieser Mann verlegte Steinplatten und schliff Halbedelsteine. 
+Er war ein richtiger Steinexperte. 
+Besonders gut gefielen Benno Kristalle, weil sie so schön funkelten. 
+
+In der Mittelschule fand Benno Baumgarten zwei Freunde, die sich auch für Steine interessierten. 
+Die kleine Forschergruppe hatte sogar ein eigenes geheimes Logo. 
+Später besuchte Benno das Gymnasium in Bozen. 
+
+Das Fach Chemie gefiel ihm besonders gut, da er Experimente liebte. 
+Zu Hause richtete er sich im Keller sogar ein eigenes Labor ein. 
+Die Eltern erlaubten es zwar, aber es wäre ihnen viel lieber gewesen, wenn er ein Instrument gelernt hätte. 
+
+Viele Geräte und chemische Stoffe für das Chemielabor im Keller kaufte er auf dem Flohmarkt. 
+Er kaufte auch eine Zeitschrift für Chemiker. 
+Er konnte von den Experimenten gar nicht genug bekommen. 
+
+Als er das Gymnasium abgeschlossen hatte, ging er nach München, um Geologie zu studieren. 
+Heute leitet der Diplom-Geologe Benno Baumgarten die Abteilung Geologie des Naturmuseums in Bozen. 
+Dort können Kinder und Erwachsene vieles über Gesteine und ihre Entstehung erfahren. 
+"""
+
+# Fragen zum Text (von KI erzeugt)
+fragen = """
+<h2>Fragen</h2>
+<p>
+<ol>
+    <li>Wo kann man Steine finden?</li>
+    <li>Wer ist Benno Baumgarten?</li>
+    <li>Was macht ein Geologe?</li>
+    <li>Wann wurde Benno geboren?</li>
+    <li>Mit wem lebte Benno als Kind zusammen?</li>
+    <li>Was konnte Bennos Grossmutter herstellen?</li>
+    <li>Welche Steine sammelte Benno besonders gerne?</li>
+    <li>Wie wurde Benno inspiriert, sich für Steine zu interessieren?</li>
+    <li>Was gefiel Benno an Kristallen?</li>
+    <li>Was richtete sich Benno im Keller ein?</li>
+    <li>Warum wollten Bennos Eltern lieber, dass er ein Instrument lernt?</li>
+    <li>Was macht Benno heute beruflich?</li>
+</ol>
+</p>
+"""
+
+# Antworten zu den Fragen
+antworten = """
+<h2>Antworten</h2>
+<p>
+    <details>
+        <ol>
+            <li>Wo kann man Steine finden? <br>
+                Man kann Steine auf der Strasse, am See, im Wald und am Berg finden.</li>
+            <li>Wer ist Benno Baumgarten? <br>
+                Benno Baumgarten ist ein Geologe, der sich für Steine interessiert.</li>
+            <li>Was macht ein Geologe? <br>
+                Ein Geologe erforscht Steine und weiss viel über sie.</li>
+            <li>Wann wurde Benno geboren? <br>
+                Benno wurde am 24. Juni 1956 geboren.</li>
+            <li>Mit wem lebte Benno als Kind zusammen? <br>
+                Benno lebte mit seinen Eltern und seiner Grossmutter zusammen.</li>
+            <li>Was konnte Bennos Grossmutter herstellen? <br>
+                Seine Grossmutter konnte selbst Seife herstellen.</li>
+            <li>Welche Steine sammelte Benno besonders gerne? <br>
+                Benno sammelte besonders gerne Opale.</li>
+            <li>Wie wurde Benno inspiriert, sich für Steine zu interessieren? <br>
+                Benno wurde inspiriert, weil sein Vater und Bruder ihm Steine von Wanderungen mitbrachten.</li>
+            <li>Was gefiel Benno an Kristallen? <br>
+                Benno gefiel, dass Kristalle so schön funkelten.</li>
+            <li>Was richtete sich Benno im Keller ein? <br>
+                Er richtete sich ein eigenes Labor im Keller ein.</li>
+            <li>Warum wollten Bennos Eltern lieber, dass er ein Instrument lernt? <br>
+                Es wäre ihnen lieber gewesen, wenn er ein Instrument gelernt hätte, statt Chemie.</li>
+            <li>Was macht Benno heute beruflich? <br>
+                Heute leitet Benno die Abteilung Geologie des Naturmuseums in Bozen.</li>
+        </ol>
+    </details>
+</p>
+"""
+
+# Rückmeldung der KI
+ki_antwort = """**Gedanken zur Erstellung der Fragen:**
+Ich möchte sicherstellen, dass die Fragen den Schülern helfen, den Text genau zu lesen und darüber nachzudenken. Die Fragen sollen sowohl persönliche Aspekte als auch Fakten aus dem Text abdecken. Ich werde die Fragen so formulieren, dass sie auf unterschiedliche Informationen im Text abzielen, wie die Herkunft von Benno, seine Interessen, und was Geologie umfasst.
+
+**Fragen als HTML-Liste:**
+
+```html
+<h2>Fragen</h2>
+<p>
+<ol>
+    <li>Wo kann man Steine finden?</li>
+    <li>Wer ist Benno Baumgarten?</li>
+    <li>Was macht ein Geologe?</li>
+    <li>Wann wurde Benno geboren?</li>
+    <li>Mit wem lebte Benno als Kind zusammen?</li>
+    <li>Was konnte Bennos Grossmutter herstellen?</li>
+    <li>Welche Steine sammelte Benno besonders gerne?</li>
+    <li>Wie wurde Benno inspiriert, sich für Steine zu interessieren?</li>
+    <li>Was gefiel Benno an Kristallen?</li>
+    <li>Was richtete sich Benno im Keller ein?</li>
+    <li>Warum wollten Bennos Eltern lieber, dass er ein Instrument lernt?</li>
+    <li>Was macht Benno heute beruflich?</li>
+</ol>
+</p>
+```
+
+**Antworten als HTML-Liste:**
+
+```html
+<h2>Antworten</h2>
+<p>
+    <details>
+        <ol>
+            <li>Wo kann man Steine finden? <br>
+                Man kann Steine auf der Strasse, am See, im Wald und am Berg finden.</li>
+            <li>Wer ist Benno Baumgarten? <br>
+                Benno Baumgarten ist ein Geologe, der sich für Steine interessiert.</li>
+            <li>Was macht ein Geologe? <br>
+                Ein Geologe erforscht Steine und weiss viel über sie.</li>
+            <li>Wann wurde Benno geboren? <br>
+                Benno wurde am 24. Juni 1956 geboren.</li>
+            <li>Mit wem lebte Benno als Kind zusammen? <br>
+                Benno lebte mit seinen Eltern und seiner Grossmutter zusammen.</li>
+            <li>Was konnte Bennos Grossmutter herstellen? <br>
+                Seine Grossmutter konnte selbst Seife herstellen.</li>
+            <li>Welche Steine sammelte Benno besonders gerne? <br>
+                Benno sammelte besonders gerne Opale.</li>
+            <li>Wie wurde Benno inspiriert, sich für Steine zu interessieren? <br>
+                Benno wurde inspiriert, weil sein Vater und Bruder ihm Steine von Wanderungen mitbrachten.</li>
+            <li>Was gefiel Benno an Kristallen? <br>
+                Benno gefiel, dass Kristalle so schön funkelten.</li>
+            <li>Was richtete sich Benno im Keller ein? <br>
+                Er richtete sich ein eigenes Labor im Keller ein.</li>
+            <li>Warum wollten Bennos Eltern lieber, dass er ein Instrument lernt? <br>
+                Es wäre ihnen lieber gewesen, wenn er ein Instrument gelernt hätte, statt Chemie.</li>
+            <li>Was macht Benno heute beruflich? <br>
+                Heute leitet Benno die Abteilung Geologie des Naturmuseums in Bozen.</li>
+        </ol>
+    </details>
+</p>
+```"""
+

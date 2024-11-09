@@ -73,6 +73,10 @@ def main() -> bool:
     gz.PushButton(master=app, text='Texte ins Internet', width=100,
                   command=helfer.klicke_button_texte_ins_internet)
     
+    # Button: Lesbarkeit der Texte
+    gz.PushButton(master=app, text='Lesbarkeit der Texte', width=100,
+                  command=helfer.klicke_button_lesbarkeit_texte)
+    
     # Button: Budget bei OpenAI
     gz.PushButton(master=app, text='Budget bei OpenAI', width=100,
                   command=helfer.klicke_button_budget_bei_openai)

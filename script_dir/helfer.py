@@ -21,7 +21,7 @@ import webbrowser
 
 
 # -----------------------------------------------------------------------------
-APP = gz.App(title='Training Verstehen', width=230, height= 450)
+APP = gz.App(title='Training Verstehen', width=230, height= 500)
 WORKING_DIR = os.getcwd()
 # Welches Modell? https://openai.com/api/pricing/ 
 OPENAI_MODELL = 'gpt-4o-mini'
@@ -509,6 +509,47 @@ def klicke_button_fragen_suchen() ->bool:
 
 
 # -----------------------------------------------------------------------------
+def klicke_button_lesbarkeit_texte() -> bool:
+    """
+    Zeigt den Lesbarkeitsindex eines Textes an.
+    :return: True, wenn alles OK.
+    """
+
+    print('\n\t klicke_button_lesbarkeit_texte')
+
+    # Datei wählen
+    pfad_zu_textdatei = waehle_text_datei()
+
+    # wenn keine Datei gewählt
+    if pfad_zu_textdatei == '':
+        print('Keine Datei gewählt.')
+        return False
+
+    # Lesen die Text-Datei
+    with open(pfad_zu_textdatei, 'r') as datei:
+        toml_content = datei.read()
+
+    # Parsen des TOML-Inhalts
+    toml_doc = tomlkit.parse(toml_content)
+    text_roh = toml_doc['text']   
+
+    # LIX berechnen
+    lix = berechne_text_schwierigkeit(text_roh)
+
+    info_text = f'Der Lesbarkeitsindex ist {lix}. \n'
+    if lix > 40:
+        info_text += 'Dieser Text ist zu schwierig für Schüler.'
+    elif lix in range(30, 39):
+        info_text += 'Der Text sollte gut lesbar sein.'
+    else:
+        info_text += 'Der Text ist einfach zu lesen.'
+
+    gz.info(title='Info', text=info_text)
+
+    return True
+
+
+# -----------------------------------------------------------------------------
 def klicke_button_text_bearbeiten() -> bool:
     """
     Startet alle Prozesse, wenn der Button "Text bearbeiten" geklickt wird
@@ -711,7 +752,8 @@ def klicke_button_text_zu_audio() -> bool:
     # edge-tts einrichten
     
     # Stimme zufällig auswählen
-    stimmen_zur_auswahl = ['de-DE-SeraphinaMultilingualNeural', 'de-DE-FlorianMultilingualNeural']
+    # Mehrsprachige Stimmen: stimmen_zur_auswahl = ['de-DE-SeraphinaMultilingualNeural', 'de-DE-FlorianMultilingualNeural']
+    stimmen_zur_auswahl = ['de-DE-AmalaNeural', 'de-DE-ConradNeural', 'de-DE-KatjaNeural', 'de-DE-KillianNeural']
     stimme = choice(stimmen_zur_auswahl)
 
     # Name der toml-Datei bestimmen, ohne Endung
