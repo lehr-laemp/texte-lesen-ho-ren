@@ -21,7 +21,7 @@ import webbrowser
 
 
 # -----------------------------------------------------------------------------
-APP = gz.App(title='Training Verstehen', width=230, height= 400)
+APP = gz.App(title='Training Verstehen', width=230, height= 450)
 WORKING_DIR = os.getcwd()
 # Welches Modell? https://openai.com/api/pricing/ 
 OPENAI_MODELL = 'gpt-4o-mini'
@@ -312,8 +312,8 @@ def erstelle_index_html() -> bool:
 
             # Links zu den Seiten zusammenstellen
             index_inhalt += '<p> \n'
-            index_inhalt += f'{toml_doc['titel']} \n'
-            index_inhalt += f'<a href="mat/{toml_doc['dateiname']}-text.html" target="_blank"> Lesen</a> &nbsp; \n'
+            index_inhalt += f'{toml_doc['titel']}: \n'
+            index_inhalt += f'<a href="mat/{toml_doc['dateiname']}-text.html" target="_blank"> Lesen,</a> &nbsp; \n'
             index_inhalt += f'<a href="mat/{toml_doc['dateiname']}-audio.html" target="_blank"> hören</a> \n'
             index_inhalt += '</p> \n\n'
 
@@ -455,8 +455,7 @@ def klicke_button_budget_bei_openai() -> bool:
 
     print('\n\t klicke_button_budget_bei_openai')
 
-    webbrowser.open(url='https://platform.openai.com/settings/organization/general')
-
+    webbrowser.open(url='https://platform.openai.com/settings/organization/usage')
 
     return True
 
@@ -769,6 +768,10 @@ def klicke_button_texte_zu_html() -> bool:
     print('\n\t klicke_button_texte_zu_html')
 
     erstelle_index_html()
+
+    pfad_zu_index = os.path.join(WORKING_DIR, 'index.html')
+
+    webbrowser.open(url='file://' + pfad_zu_index)
 
     return True
 

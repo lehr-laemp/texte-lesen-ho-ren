@@ -1,0 +1,129 @@
+# ##########################################
+
+# Name der toml-Datei
+dateiname = "ameisenforscher"
+
+# Titel des Textes
+titel = "Bert Hölldobler, der Ameisenforscher"
+
+# Quelle des Textes
+quelle = "?"
+
+# Hier kommt der Text
+text = """
+Bert Hölldobler ist ein bekannter Forscher von Ameisen. 
+Er hat herausgefunden, dass Ameisen mit Gerüchen miteinander reden. 
+„Reden“ heisst hier, dass sie Informationen austauschen.   
+Wenn es für die Ameisen gefährlich wird, machen sie einen besonderen Geruch. 
+Sie bringen diesen Geruch aus einem Teil ihres Körpers, der Drüse, am Hinterleib heraus. 
+Andere Ameisen riechen diesen Geruch mit ihren Fühlern. 
+So wissen sie, dass sie aufpassen müssen.   
+Ameisen erkennen sich auch durch Gerüche. 
+Gemeinsam mit anderen Forschern hat Bert Hölldobler herausgefunden, dass alle Ameisen in einem Ameisenstaat miteinander verwandt sind. 
+Das bedeutet, sie stammen von einer einzigen Ameise ab.   
+Ein Ameisenstaat ist eine Gruppe von Ameisen, die zusammen in einem Bau leben. 
+Alle Ameisen in diesem Staat helfen einander. 
+Manchmal setzen sie sogar ihr Leben aufs Spiel, um die anderen zu schützen.   
+Bert Hölldobler nennt den Ameisenstaat einen „Superorganismus“. 
+Das heisst, viele Ameisen leben so gut zusammen, dass sie wie ein grosses Lebewesen aussehen.   
+Bert Hölldobler wurde am 25. Juni 1936 in Deutschland geboren. 
+Schon als Kind interessierte er sich sehr für Ameisen. 
+Er schaute ihnen im Wald zu und hielt sie in einem speziellen Terrarium. 
+Das ist ein Glasbehälter für Ameisen, auch Formicarium genannt. 
+„Formica“ bedeutet auf Lateinisch „Ameise“.   
+Als Erwachsener beobachtete er Ameisen an vielen Orten auf der ganzen Welt. 
+Er war in Wüsten und Wäldern von Nord- und Südamerika, in Afrika, Australien und Asien. 
+Bert Hölldobler wollte immer mehr über Ameisen lernen.   
+Er sprach mit anderen Forschern über das, was er gesehen hatte. 
+Oft kommen neue Ideen, wenn Forscher miteinander reden. 
+So hat er die Idee vom Ameisen-Superorganismus mit anderen Forschern entwickelt.   
+Im Labor schaute Bert Hölldobler einzelne Ameisen unter einem Mikroskop an. 
+So konnte er auch den Körper der Ameisen besser verstehen.   
+"""
+
+# Fragen zum Text (von KI erzeugt)
+fragen = """
+<h2>Fragen</h2>
+<p>
+<ol>
+    <li>Wer ist Bert Hölldobler?</li>
+    <li>Womit beschäftigt sich Bert Hölldobler?</li>
+    <li>Wie kommunizieren Ameisen miteinander?</li>
+    <li>Was passiert, wenn es für die Ameisen gefährlich wird?</li>
+    <li>Wozu dienen die Fühler der Ameisen?</li>
+    <li>Was bedeutet es, wenn Ameisen sich durch Gerüche erkennen?</li>
+    <li>Was ist ein Ameisenstaat?</li>
+    <li>Wie helfen Ameisen in einem Ameisenstaat einander?</li>
+    <li>Was versteht man unter einem „Superorganismus“?</li>
+    <li>Wann und wo wurde Bert Hölldobler geboren?</li>
+    <li>Was machte Bert Hölldobler als Kind mit Ameisen?</li>
+    <li>Wie hat Bert Hölldobler die Idee vom Ameisen-Superorganismus entwickelt?</li>
+</ol>
+</p>"""
+
+# Antworten zu den Fragen
+antworten = """
+<h2>Antworten</h2>
+<p>
+    <details>
+        <ol>
+            <li>Wer ist Bert Hölldobler? <br> Bert Hölldobler ist ein bekannter Forscher von Ameisen.</li>
+            <li>Womit beschäftigt sich Bert Hölldobler? <br> Er beschäftigt sich mit der Forschung über Ameisen.</li>
+            <li>Wie kommunizieren Ameisen miteinander? <br> Ameisen kommunizieren mit Gerüchen.</li>
+            <li>Was passiert, wenn es für die Ameisen gefährlich wird? <br> Sie machen einen besonderen Geruch, um andere Ameisen zu warnen.</li>
+            <li>Wozu dienen die Fühler der Ameisen? <br> Die Fühler helfen den Ameisen, den Geruch wahrzunehmen.</li>
+            <li>Was bedeutet es, wenn Ameisen sich durch Gerüche erkennen? <br> Es bedeutet, dass sie durch den Geruch wissen, wer sie sind und ob sie zur gleichen Gruppe gehören.</li>
+            <li>Was ist ein Ameisenstaat? <br> Ein Ameisenstaat ist eine Gruppe von Ameisen, die zusammen in einem Bau leben.</li>
+            <li>Wie helfen Ameisen in einem Ameisenstaat einander? <br> Sie helfen einander bei der Arbeit und schützen sich gegenseitig.</li>
+            <li>Was versteht man unter einem „Superorganismus“? <br> Ein Superorganismus ist, wenn viele Ameisen zusammenleben und wie ein grosses Lebewesen wirken.</li>
+            <li>Wann und wo wurde Bert Hölldobler geboren? <br> Er wurde am 25. Juni 1936 in Deutschland geboren.</li>
+            <li>Was machte Bert Hölldobler als Kind mit Ameisen? <br> Er schaute ihnen im Wald zu und hielt sie in einem speziellen Terrarium.</li>
+            <li>Wie hat Bert Hölldobler die Idee vom Ameisen-Superorganismus entwickelt? <br> Er hat mit anderen Forschern darüber gesprochen und seine Beobachtungen geteilt.</li>
+        </ol>
+    </details>
+</p>"""
+
+# Rückmeldung der KI
+ki_antwort = """**Überlegungen zu den Fragen:**  
+Der Text handelt von Bert Hölldobler und seiner Forschung über Ameisen. Die Fragen sollten das Verständnis über den Inhalt sowie über die Begriffe und deren Bedeutungen fördern. Ich denke, es ist wichtig, Fragen zu stellen, die nicht nur Fakten abfragen, sondern auch das Nachdenken über die Rolle der Ameisen und die Bedeutung der Forschung anregen.
+
+**Fragen in HTML-Liste:**  
+<h2>Fragen</h2>
+<p>
+<ol>
+    <li>Wer ist Bert Hölldobler?</li>
+    <li>Womit beschäftigt sich Bert Hölldobler?</li>
+    <li>Wie kommunizieren Ameisen miteinander?</li>
+    <li>Was passiert, wenn es für die Ameisen gefährlich wird?</li>
+    <li>Wozu dienen die Fühler der Ameisen?</li>
+    <li>Was bedeutet es, wenn Ameisen sich durch Gerüche erkennen?</li>
+    <li>Was ist ein Ameisenstaat?</li>
+    <li>Wie helfen Ameisen in einem Ameisenstaat einander?</li>
+    <li>Was versteht man unter einem „Superorganismus“?</li>
+    <li>Wann und wo wurde Bert Hölldobler geboren?</li>
+    <li>Was machte Bert Hölldobler als Kind mit Ameisen?</li>
+    <li>Wie hat Bert Hölldobler die Idee vom Ameisen-Superorganismus entwickelt?</li>
+</ol>
+</p>
+
+**Antworten in HTML-Liste mit Frage-Antwort-Paaren:**  
+<h2>Antworten</h2>
+<p>
+    <details>
+        <ol>
+            <li>Wer ist Bert Hölldobler? <br> Bert Hölldobler ist ein bekannter Forscher von Ameisen.</li>
+            <li>Womit beschäftigt sich Bert Hölldobler? <br> Er beschäftigt sich mit der Forschung über Ameisen.</li>
+            <li>Wie kommunizieren Ameisen miteinander? <br> Ameisen kommunizieren mit Gerüchen.</li>
+            <li>Was passiert, wenn es für die Ameisen gefährlich wird? <br> Sie machen einen besonderen Geruch, um andere Ameisen zu warnen.</li>
+            <li>Wozu dienen die Fühler der Ameisen? <br> Die Fühler helfen den Ameisen, den Geruch wahrzunehmen.</li>
+            <li>Was bedeutet es, wenn Ameisen sich durch Gerüche erkennen? <br> Es bedeutet, dass sie durch den Geruch wissen, wer sie sind und ob sie zur gleichen Gruppe gehören.</li>
+            <li>Was ist ein Ameisenstaat? <br> Ein Ameisenstaat ist eine Gruppe von Ameisen, die zusammen in einem Bau leben.</li>
+            <li>Wie helfen Ameisen in einem Ameisenstaat einander? <br> Sie helfen einander bei der Arbeit und schützen sich gegenseitig.</li>
+            <li>Was versteht man unter einem „Superorganismus“? <br> Ein Superorganismus ist, wenn viele Ameisen zusammenleben und wie ein grosses Lebewesen wirken.</li>
+            <li>Wann und wo wurde Bert Hölldobler geboren? <br> Er wurde am 25. Juni 1936 in Deutschland geboren.</li>
+            <li>Was machte Bert Hölldobler als Kind mit Ameisen? <br> Er schaute ihnen im Wald zu und hielt sie in einem speziellen Terrarium.</li>
+            <li>Wie hat Bert Hölldobler die Idee vom Ameisen-Superorganismus entwickelt? <br> Er hat mit anderen Forschern darüber gesprochen und seine Beobachtungen geteilt.</li>
+        </ol>
+    </details>
+</p>"""
+

@@ -75,7 +75,7 @@ def main() -> bool:
     
     # Button: Budget bei OpenAI
     gz.PushButton(master=app, text='Budget bei OpenAI', width=100,
-                  command=helfer.klicke_button_texte_ins_internet)
+                  command=helfer.klicke_button_budget_bei_openai)
 
     # Buttons erstellen und hinzufügen
     # button1 = gz.PushButton(app, text="Button 1", command=lambda: button_clicked("Button 1"))
