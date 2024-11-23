@@ -9,9 +9,9 @@ main.py
         mit pyinstaller: pyinstaller --onefile --windowed main.py
 
 """
+
 # -----------------------------------------------------------------------------
 import guizero as gz
-import tomlkit
 
 from script_dir import helfer
 
@@ -24,8 +24,8 @@ def main() -> bool:
     """
 
     print()
-    print(60 * 'x')
-    print('Starte GUI')
+    print(60 * "x")
+    print("Starte GUI")
 
     # Funktion, die aufgerufen wird, wenn ein Button gedrückt wird
     def button_clicked(button_text):
@@ -38,48 +38,92 @@ def main() -> bool:
     app.tk.resizable(False, False)
 
     # Fonts
-    app.font = ('Helvetica')
-    app.text_size = 20
+    app.font = "Helvetica"
+    app.text_size = 16
 
     # Button: neuer Text erstellen
-    gz.PushButton(master=app, text='Texte erstellen', width=100,
-                  command=helfer.klicke_button_text_erstellen)
-    
+    gz.PushButton(
+        master=app,
+        text="Texte erstellen",
+        width=100,
+        command=helfer.klicke_button_text_erstellen,
+    )
+
     # # Button: bestehender Text normalisieren
     # gz.PushButton(master=app, text='Texte normalisieren', width=100,
     #              command=helfer.klicke_button_text_normalisieren)
 
     # Button: bestehender Text bearbeiten
-    gz.PushButton(master=app, text='Texte bearbeiten', width=100,
-                  command=helfer.klicke_button_text_bearbeiten)
-    
+    gz.PushButton(
+        master=app,
+        text="Texte bearbeiten",
+        width=100,
+        command=helfer.klicke_button_text_bearbeiten,
+    )
+
     # Button: Text vereinfachen
-    gz.PushButton(master=app, text='Texte vereinfachen', width=100,
-                  command=helfer.klicke_button_text_vereinfachen)
+    gz.PushButton(
+        master=app,
+        text="Texte vereinfachen",
+        width=100,
+        command=helfer.klicke_button_text_vereinfachen,
+    )
 
     # Button: Fragen zu Text suchen
-    gz.PushButton(master=app, text='Fragen suchen', width=100,
-                  command=helfer.klicke_button_fragen_suchen)
-    
+    gz.PushButton(
+        master=app,
+        text="Fragen suchen",
+        width=100,
+        command=helfer.klicke_button_fragen_suchen,
+    )
+
     # Button: Text zu Audio
-    gz.PushButton(master=app, text='Text zu Audio', width=100,
-                  command=helfer.klicke_button_text_zu_audio)
-    
+    gz.PushButton(
+        master=app,
+        text="Text zu Audio",
+        width=100,
+        command=helfer.klicke_button_text_zu_audio,
+    )
+
     # Button: Erstelle alle html-Inhalte
-    gz.PushButton(master=app, text='Texte zu html', width=100,
-                  command=helfer.klicke_button_texte_zu_html)
-    
+    gz.PushButton(
+        master=app,
+        text="Texte zu html",
+        width=100,
+        command=helfer.klicke_button_texte_zu_html,
+    )
+
     # Button: Speichere die Texte im Internet
-    gz.PushButton(master=app, text='Texte ins Internet', width=100,
-                  command=helfer.klicke_button_texte_ins_internet)
-    
+    gz.PushButton(
+        master=app,
+        text="Texte ins Internet",
+        width=100,
+        command=helfer.klicke_button_texte_ins_internet,
+    )
+
+    # Button: Text zu Podcast
+    gz.PushButton(
+        master=app,
+        text="Texte zu Podcast",
+        width=100,
+        command=helfer.klicke_button_text_zu_podcast,
+    )
+
     # Button: Lesbarkeit der Texte
-    gz.PushButton(master=app, text='Lesbarkeit der Texte', width=100,
-                  command=helfer.klicke_button_lesbarkeit_texte)
-    
+    gz.PushButton(
+        master=app,
+        text="Lesbarkeit der Texte",
+        width=100,
+        command=helfer.klicke_button_lesbarkeit_texte,
+    )
+
     # Button: Budget bei OpenAI
-    gz.PushButton(master=app, text='Budget bei OpenAI', width=100,
-                  command=helfer.klicke_button_budget_bei_openai)
+    gz.PushButton(
+        master=app,
+        text="Budget bei OpenAI",
+        width=100,
+        command=helfer.klicke_button_budget_bei_openai,
+    )
 
     # Buttons erstellen und hinzufügen
     # button1 = gz.PushButton(app, text="Button 1", command=lambda: button_clicked("Button 1"))
@@ -91,61 +135,25 @@ def main() -> bool:
 
 
 # -----------------------------------------------------------------------------
-if __name__ == '__main__':
-    # helfer.teste_start()
-
-    # helfer.erstelle_index_html()
+if __name__ == "__main__":
+    
     main()
 
-    # # Lesen die Text-Datei
-    # with open('./texte/landleben.toml', 'r') as f:
-    #     toml_content = f.read()
+#     podcast_text = """
+# **Tom:** Hallo und herzlich willkommen zu unserem Podcast! Ich bin Tom und heute habe ich eine ganz besondere Expertin bei mir, Lisa. 
 
-    # # Parsen des TOML-Inhalts
-    # toml_doc = tomlkit.parse(toml_content)
-    # text = toml_doc['text']    
+# **Lisa:** Hallo Tom, schön hier zu sein! Ich freue mich darauf, mit dir über die spannende Geschichte der Städte im Mittelalter zu reden.
 
-    # print(helfer.berechne_text_schwierigkeit(text=text))
+# **Tom:** Ja, das klingt super! Aber bevor wir starten, kannst du uns kurz erklären, was eigentlich das Mittelalter ist?
 
-    # text -> text.html
-    # helfer.erstelle_html_text(toml_dateiname='landleben.toml')
+# **Lisa:** Natürlich! Das Mittelalter ist eine Zeit in der Geschichte, die von etwa 500 bis 1500 nach Christus dauerte. Das ist also schon eine ganz schöne Weile her!
 
-#     text = """
-# Dies ist ein Text von Klexikon - das Kinderlexikon
+# # **Tom:** Wow, das ist eine lange Zeit! Und was passiert denn da genau, Lisa?
 
-# Das Fest Halloween ist schon sehr alt und wird jedes Jahr am 31. Oktober gefeiert. 
-# Das ist der Abend vor dem 1. November, also vor Allerheiligen. 
-# Der Name „Halloween“ kommt aus dem Englischen und ist eine Abkürzung für „All Hallows‘ Evening“. 
-# Übersetzt bedeutet das: „der Abend vor Allerheiligen“.  
+# # **Lisa:** Ich danke dir, Tom! Es hat viel Freude gemacht, über dieses Thema zu sprechen. Bis zum nächsten Mal!
 
-# Eigentlich kommt Halloween aus Irland, also aus Europa. 
-# Dort feierten die Einwohner Irlands, die Kelten, schon vor vielen Hundert Jahren dieses Fest. 
-# Sie glaubten, dass am Abend des 31. Oktobers die Toten auf die Erde zurückkehrten, um den Lebenden Streiche zu spielen. 
-# Deswegen sind die meisten Halloweenkostüme gruselig. 
-# Die Kelten hofften, dass die Toten dann an ihnen vorbeigehen und sie nicht als Lebende erkennen.  
+# # **Tom:** Bis zum nächsten Mal! Und liebe Zuhörer, bleibt neugierig und denkt daran, dass Geschichte echt spannend ist! Tschüss!
 
-# Das Fest wurde dann in den USA beliebt. 
-# Es ist dort ähnlich wichtig wie woanders Fastnacht. 
-# Um das Jahr 2000 kam Halloween langsam auch zu uns. 
-# Manche Leute mögen es, weil sie sonst keine eigenen Traditionen mehr im Herbst haben.  
+#     """
 
-# Wie feiert man Halloween?  
-
-# Bisher war das Gruselfest vor allem in den USA sehr beliebt. 
-# Inzwischen feiern auch viele Menschen in Deutschland Halloween. 
-# Besonders Kindern macht es Spass, sich als Hexen und Geister zu verkleiden und andere zu erschrecken. 
-# Sie gehen dann abends von Haustüre zu Haustüre und klingeln. 
-# Wenn jemand aufmacht, rufen sie „Süsses, sonst gibt’s Saures!“. 
-# Meistens bekommen die Kinder dann Süßigkeiten.  
-
-# Besonders beliebt ist auch die Kürbislaterne, die oft schon an den Tagen vor Halloween hergestellt wird. 
-# Dazu höhlt man einen Kürbis aus und schnitzt ein Gesicht hinein. 
-# Dann legt man eine Kerze in den Kürbis und kann ihn in den Garten oder auf einen Balkon stellen. 
-# Damit man das ausgehöhlte Fruchtfleisch nicht wegwerfen muss, kann man daraus eine Kürbissuppe kochen.  
-
-# In den USA ist es auch üblich, dass junge Leute zu Halloween-Partys einladen. 
-# Man bittet die Gäste, in einem passenden Kostüm zu kommen. 
-# Sie spielen dann Spiele oder erzählen einander gruselige Geschichten. 
-# """
-
-#     helfer.berechne_text_schwierigkeit(text=text)
+#     helfer.mache_podcast_zu_audio(datei_name='mittelalter-stadt.toml', podcast_text=podcast_text)
