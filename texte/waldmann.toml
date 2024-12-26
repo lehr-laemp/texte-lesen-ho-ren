@@ -171,3 +171,50 @@ Ich möchte Fragen stellen, die das genaue Lesen des Textes fördern und das Ver
 </p>
 ```"""
 
+test = """ 
+Bitte schreibe zu folgender Geschichte einen Prompt für einen KI-Bild-Generator. Bitte die Ausgabe in Englisch.
+
+####
+Am Rande eines dichten Waldes stand ein alter, bunter Wohnwagen. 
+Darin lebte Herr Pumpernickel, ein älterer Herr mit einem langen, weissen Bart und einer Brille, die immer ein bisschen schief auf seiner Nase sass. 
+Herr Pumpernickel liebte die Ruhe im Wald. 
+Jeden Abend setzte er sich mit einer Tasse dampfendem Tee in seinen Schaukelstuhl, schaute in die Sterne und lauschte den Geräuschen der Natur.  
+
+Eines Nachts jedoch durchbrach ein lautes, klägliches Miauuuuu die Stille. 
+Herr Pumpernickel richtete sich erschrocken auf und spitzte die Ohren. 
+Da war es wieder – ein verzweifeltes Katzengeschrei, das aus dem dunklen Wald zu kommen schien.  
+
+„Oh je, das klingt nach einem kleinen Kätzchen in Not!“, murmelte Herr Pumpernickel und griff nach seiner Laterne. 
+Mit leuchtenden Augen und einem Funken Abenteuerlust machte er sich auf den Weg in den Wald, dem Miauen nach. 
+Doch der Wald war dicht und dunkel, und das Geräusch schien von überall zu kommen.  
+
+Gerade, als Herr Pumpernickel dachte, er würde den Weg nicht finden, blitzte plötzlich ein zarter, glitzernder Schein auf. 
+Vor ihm schwebte eine kleine, leuchtende Gestalt – eine Fee mit silbernen Flügeln und einem freundlichen Lächeln.  
+
+„Guten Abend, Herr Pumpernickel“, sagte die Fee mit sanfter Stimme. 
+„Ich bin Lili, die gute Fee des Waldes. Es scheint, dass du meine Hilfe brauchst.“  
+
+Herr Pumpernickel nickte erleichtert. 
+„Ja, bitte! Ein Kätzchen ruft um Hilfe, aber ich finde es nicht.“  
+
+Die Fee Lili schloss die Augen, lauschte und lächelte dann. 
+„Ich weiss, wo es ist. Folge mir!“  
+
+Zusammen gingen sie tiefer in den Wald, bis sie an einem grossen Baum ankamen. 
+Ganz oben, auf einem Ast, sass ein kleines, zitterndes Kätzchen mit grossen Augen.  
+
+„Oh, armes Ding“, murmelte Herr Pumpernickel.  
+
+Mit einem sanften Winken ihrer Hand liess die Fee das Kätzchen langsam und sicher vom Baum gleiten und landete sanft in Herrn Pumpernickels Armen. 
+Das Kätzchen schnurrte und schmiegte sich an ihn.  
+
+„Vielen Dank, Lili“, sagte Herr Pumpernickel dankbar zur Fee.  
+
+„Gerne, Herr Pumpernickel“, antwortete Lili. 
+„Und vergiss nicht, der Wald ist immer für dich da – mit ein bisschen Magie.“  
+
+Mit einem letzten, glitzernden Funkeln verschwand Lili, und Herr Pumpernickel brachte das Kätzchen in seinen warmen Wohnwagen. 
+Seit diesem Tag wohnte das kleine Kätzchen bei ihm, und jeden Abend, wenn die Sterne leuchteten, erzählte er ihm Geschichten von seiner magischen Nacht im Wald.
+
+
+"""

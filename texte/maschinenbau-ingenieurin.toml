@@ -1,0 +1,239 @@
+# ##########################################
+
+# Name der toml-Datei
+dateiname = "maschinenbau-ingenieurin"
+
+# Titel des Textes
+titel = "Mona Goudarzi und die Technik"
+
+# Quelle des Textes
+quelle = "https://www.science-on-stage.de/"
+
+# Hier kommt der Text
+text = """
+Mona Goudarzi kommt aus dem Iran.   
+Als Kind interessierte sie sich für den Fernseher.   
+Sie fragte sich, wie Bilder in den Fernseher kommen.    
+
+Monas Technik-Begleiter  
+
+Mona hatte zwei ältere Brüder.   
+Sie liebten Technik und bauten an ferngesteuerten Autos.   
+Mona durfte oft mitmachen und zuschauen.   
+Die Brüder erklärten ihr viele technische Dinge.    
+Mona lernte:  
+- Über Dinge nachdenken ist wichtig.  
+- Fragen stellen hilft, mehr zu verstehen.    
+
+Ein neuer Anfang in Deutschland  
+
+Mit 16 Jahren zog Mona nach Deutschland.   
+Ihre Lehrer sahen, dass sie Technik mochte.   
+Sie empfahlen ihr, etwas Technisches zu studieren.   
+So wurde Mona Maschinenbau-Ingenieurin.    
+
+Wie funktioniert ein Windrad?  
+
+Ein Windrad macht Strom aus Wind.   
+Der Wind dreht die Flügel (Rotoren).   
+Die Rotoren sind mit einem Generator verbunden.   
+Der Generator produziert Strom.   
+Der Strom geht durch dicke Kabel ins Stromnetz.    
+**Beispiel:**   Ein Windrad funktioniert wie ein Fahrraddynamo.   
+Der Fahrraddynamo macht Strom für die Lampe.   
+Das Windrad macht Strom für viele Menschen.  
+
+Steuercomputer im Windrad 
+
+Ein Steuercomputer regelt alles im Windrad.   
+Er sitzt in der Gondel, im Fuß oder am Turm.   
+Er bekommt Daten von Windmessgeräten.   
+Diese messen, wie stark der Wind weht.    
+Je besser das Windrad im Wind steht, desto mehr Strom kann es machen.    
+
+Sicherheit geht vor  
+
+Das Windrad hat auch ein Anemometer.   
+Das ist ein Gerät, das die Windgeschwindigkeit misst.   
+Es besteht aus kleinen Schalen, die sich drehen.   
+Bei sehr starkem Wind schaltet der Computer das Windrad ab.   
+So werden die Rotoren nicht beschädigt.    
+
+Höher und stärker werden  
+
+Windräder sollten hoch gebaut werden.   
+In großer Höhe weht der Wind stärker.   
+Heute gibt es Windräder, die 180 Meter hoch sind.   
+Allerdings sind höhere Türme schwer.   
+Sie müssen stabil sein, damit sie nicht umfallen.    
+
+Zukunft der Windkraft  
+
+Mona erforscht, wie man leichtere Windräder bauen kann.   
+Dafür gibt es neue Materialien und Bauweisen.   
+Man könnte Türme mit einem besonderen Innenbau machen – wie Bienenwaben.   
+Diese sind stabil und leicht.    
+Mona und ihr Team müssen noch viel lernen.   
+In ein paar Jahren gibt es vielleicht höhere Windräder.    
+
+"""
+
+# Fragen zum Text (von KI erzeugt)
+fragen = """
+<h2>Fragen</h2>
+<p>
+<ol>
+    <li>Woher kommt Mona Goudarzi?</li>
+    <li>Für was interessierte sich Mona als Kind?</li>
+    <li>Was bauten Monas Brüder?</li>
+    <li>Was lernte Mona von ihren Brüdern?</li>
+    <li>Wie alt war Mona, als sie nach Deutschland zog?</li>
+    <li>Was empfahlen Monas Lehrer ihr zu studieren?</li>
+    <li>Wie produziert ein Windrad Strom?</li>
+    <li>Was verbindet die Rotoren mit dem Generator?</li>
+    <li>Was macht ein Steuercomputer im Windrad?</li>
+    <li>Wie wird die Windgeschwindigkeit gemessen?</li>
+    <li>Warum schaltet der Computer das Windrad ab?</li>
+    <li>Wie hoch können moderne Windräder sein?</li>
+</ol>
+</p>
+"""
+
+# Antworten zu den Fragen
+antworten = """<h2>Antworten</h2>
+<p>
+    <details>
+        <ol>
+            <li>Woher kommt Mona Goudarzi? <br>
+                Mona kommt aus dem Iran.</li>
+            <li>Für was interessierte sich Mona als Kind?<br>
+                Mona interessierte sich für den Fernseher.</li>
+            <li>Was bauten Monas Brüder?<br>
+                Monas Brüder bauten an ferngesteuerten Autos.</li>
+            <li>Was lernte Mona von ihren Brüdern?<br>
+                Eines der wichtigen Dinge war, Fragen zu stellen.</li>
+            <li>Wie alt war Mona, als sie nach Deutschland zog?<br>
+                Mona war 16 Jahre alt.</li>
+            <li>Was empfahlen Monas Lehrer ihr zu studieren?<br>
+                Sie empfahlen ihr, etwas Technisches zu studieren.</li>
+            <li>Wie produziert ein Windrad Strom?<br>
+                Ein Windrad produziert Strom aus Wind.</li>
+            <li>Was verbindet die Rotoren mit dem Generator?<br>
+                Die Rotoren sind mit einem Generator verbunden.</li>
+            <li>Was macht ein Steuercomputer im Windrad?<br>
+                Er regelt alles im Windrad.</li>
+            <li>Wie wird die Windgeschwindigkeit gemessen?<br>
+                Sie wird mit einem Anemometer gemessen.</li>
+            <li>Warum schaltet der Computer das Windrad ab?<br>
+                Damit die Rotoren bei starkem Wind nicht beschädigt werden.</li>
+            <li>Wie hoch können moderne Windräder sein?<br>
+                Sie können bis zu 180 Meter hoch sein.</li>
+        </ol>
+    </details>
+</p>"""
+
+# Rückmeldung der KI
+ki_antwort = """<h2>Fragen</h2>
+<p>
+<ol>
+    <li>Woher kommt Mona Goudarzi?</li>
+    <li>Für was interessierte sich Mona als Kind?</li>
+    <li>Was bauten Monas Brüder?</li>
+    <li>Was lernte Mona von ihren Brüdern?</li>
+    <li>Wie alt war Mona, als sie nach Deutschland zog?</li>
+    <li>Was empfahlen Monas Lehrer ihr zu studieren?</li>
+    <li>Wie produziert ein Windrad Strom?</li>
+    <li>Was verbindet die Rotoren mit dem Generator?</li>
+    <li>Was macht ein Steuercomputer im Windrad?</li>
+    <li>Wie wird die Windgeschwindigkeit gemessen?</li>
+    <li>Warum schaltet der Computer das Windrad ab?</li>
+    <li>Wie hoch können moderne Windräder sein?</li>
+</ol>
+</p>
+
+<h2>Antworten</h2>
+<p>
+    <details>
+        <ol>
+            <li>Woher kommt Mona Goudarzi? <br>
+                Mona kommt aus dem Iran.</li>
+            <li>Für was interessierte sich Mona als Kind?<br>
+                Mona interessierte sich für den Fernseher.</li>
+            <li>Was bauten Monas Brüder?<br>
+                Monas Brüder bauten an ferngesteuerten Autos.</li>
+            <li>Was lernte Mona von ihren Brüdern?<br>
+                Eines der wichtigen Dinge war, Fragen zu stellen.</li>
+            <li>Wie alt war Mona, als sie nach Deutschland zog?<br>
+                Mona war 16 Jahre alt.</li>
+            <li>Was empfahlen Monas Lehrer ihr zu studieren?<br>
+                Sie empfahlen ihr, etwas Technisches zu studieren.</li>
+            <li>Wie produziert ein Windrad Strom?<br>
+                Ein Windrad produziert Strom aus Wind.</li>
+            <li>Was verbindet die Rotoren mit dem Generator?<br>
+                Die Rotoren sind mit einem Generator verbunden.</li>
+            <li>Was macht ein Steuercomputer im Windrad?<br>
+                Er regelt alles im Windrad.</li>
+            <li>Wie wird die Windgeschwindigkeit gemessen?<br>
+                Sie wird mit einem Anemometer gemessen.</li>
+            <li>Warum schaltet der Computer das Windrad ab?<br>
+                Damit die Rotoren bei starkem Wind nicht beschädigt werden.</li>
+            <li>Wie hoch können moderne Windräder sein?<br>
+                Sie können bis zu 180 Meter hoch sein.</li>
+        </ol>
+    </details>
+</p>"""
+
+
+# Der Original-Text
+text_original = """Mona Goudarzi ist im Iran aufgewachsen. 
+Schon als kleines Kind interessierte sie sich ganz besonders für ein technisches Gerät: den Fernseher. 
+Sie fragte sich, wie die Menschen, Tiere und Gegenstände in den Fernseher kommen. 
+Glücklicherweise hatte sie zwei ältere Brüder, die sich auch sehr für Technik interessierten und gerne an funkgesteuerten Autos und kleinen, selbstentwickelten Robotern bastelten. 
+Mona war sehr oft bei den technischen Experimenten ihrer großen Brüder dabei und beobachtete genau – häufig durfte sie auch mitbauen. 
+
+Die beiden Brüder erklärten Mona viel über Technik und versuchten ihrer kleinen Schwester auch die Bildübertragung mit Fernsehern zu erläutern. 
+Obwohl sie nicht alles gleich verstand, lernte sie dabei et was Wichtiges: 
+Es ist gut, so lange über eine Sache nachzudenken, bis man sie wirklich begriffen hat. 
+
+Als sie 16 Jahre alt war, kam Mona Goudarzi nach Deutschland. 
+Ihre Lehrer erkannten schnell, dass es ihr Spaß machte, sich mit technischen Problemen zu beschäftigen und rieten ihr, einen Beruf in diesem Bereich zu wählen. 
+Mona studierte und wurde Maschinenbauingenieurin. 
+Als Diplom-Ingenieurin kam sie in eine Forschergruppe am Institut für Integrierte Produktion in Hannover, die sich mit Windkraftanlagen beschäftigt. 
+
+**Wie funktioniert ein Windrad?**
+Ein Windrad verwandelt die Energie des Windes in Strom. 
+Dafür dreht der Wind die Rotoren, also die Flügel, des Windrads. 
+Die Rotoren sind mit einem Dynamo verbunden, er heißt „Generator“. 
+Der Generator produziert Strom und der Strom fließt über dicke Kabel in das Stromnetz. 
+Im Grunde funktioniert ein Windrad wie ein riesiger Fahrraddynamo. 
+Während der Fahrraddynamo Muskelkraft in Strom für die Fahrradlampe umwandelt, verwandelt das Windrad Windkraft in Strom für Haushalte, Fabriken und vie les mehr. 
+Damit alles reibungslos funktioniert, regelt der so genannte Steuercomputer alle Vorgänge im Windrad. 
+Er befindet sich in der Maschinengondel, im Fuß oder außerhalb des Turmes. 
+Beispielsweise gelangen Daten über die aktuelle Windstärke und Windrichtung von Windmessgeräten am Windrad zum Steuercomputer. 
+Dieser sendet dann Informationen an die Nachführmotoren, die die gesamte Maschinengondel mit dem Rotor in den Wind drehen.
+Je genauer das Windrad senkrecht zur Windrichtung ausgerichtet ist, desto mehr Strom produziert es.
+
+Das Gerät, mit dem die Windgeschwindigkeit gemessen wird, heißt Anemometer. 
+Es besteht aus kleinen Schalen, die der Wind im Kreis dreht und ist auf der Gondel befestigt. 
+Bei sehr starkem Wind, ab 90 Kilometer pro Stunde, schaltet der Computer das Windrad ab. 
+Sonst besteht die Gefahr, dass die Rotoren zerbrechen.
+
+**In großer Höhe ist viel Wind** 
+Grundsätzlich gilt für Windräder: 
+Die Rotorblätter sollten sich möglichst weit über dem Boden drehen.
+Denn mit zunehmender Höhe wird der Wind stärker und die Rotorblätter können sich schneller drehen und mehr Strom erzeugen. 
+Windräder ragen heute etwa 180 Meter in den Himmel. 
+Höher kann man sie zurzeit nicht bauen. 
+Der Grund: Mit zunehmender Höhe müssen die Türme besonders verstärkt werden, damit sie fest genug sind, um die Gondel und die Rotorblätter auch bei starkem Wind zu tragen. 
+Dadurch werden die Türme irgendwann so schwer, dass sie unter ihrem eigenen Gewicht zusammenbrechen könnten.
+
+**Leichtbau ist gefragt**
+Damit Windräder in Zukunft noch höher gebaut werden können, müssen die Türme und die Rotoren stabil und leicht sein. 
+Mona Goudarzi erforscht, welche Werkstoffe und welche Bauweisen man dazu nutzen kann. 
+Bisher bestehen die Türme bei spielweise aus dicken Stahl oder Betonringen, die aufeinandergesetzt werden. 
+Vielversprechend sind neue Baumaterialien. 
+Dabei werden die Turmteile aus einem innen und einem außen liegenden Stahlband gebildet, in den Zwischenraum kommt ein anderes Material. 
+Dieses könnte wie Bienenwaben aussehen, denn die sechseckige Form ist besonders stabil und zugleich leicht.
+Bis so ein neues Windrad gebaut werden kann, müssen Mona Goudarzi und ihr Team noch viel forschen und tüfteln. 
+In ein paar Jahren gibt es dann vielleicht noch viel höhere Windräder als heute.
+"""

@@ -11,4 +11,9 @@ Aus Texten soll mithilfe von KI Trainingsmaterial zusammengestellt werden.
     - **hören - verstehen** 
     - **lesen - verstehen**
 
-      
+
+## Umsetzung
+
+- Die Texte sollen schon so weit vorbereitet sein (vereinfacht), dass sie gut lese- und hörbar sind.
+- Die Roh-Texte sind im Ordner **texte** gespichert.
+- Die Dateien für die Internet-Seiten sind im Ordner **mat** gespeichert.

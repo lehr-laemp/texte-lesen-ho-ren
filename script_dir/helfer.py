@@ -1,9 +1,10 @@
-"""
-helfer.py
-    alle nötigen Funktionen
-"""
+# #############################################################################
+# helfer.py
+#     alle nötigen Funktionen
+# #############################################################################
 
-# -----------------------------------------------------------------------------
+
+# #############################################################################
 # import
 import pysbd.utils
 import tomlkit
@@ -20,19 +21,29 @@ import string
 import webbrowser
 
 
-# -----------------------------------------------------------------------------
-APP = gz.App(title="Training Verstehen", width=230, height=600)
+# #############################################################################
+# Konstanten
+
+APP = gz.App(title="Training Verstehen", width=230, height=400)
+
 WORKING_DIR = os.getcwd()
-# Welches Modell? https://openai.com/api/pricing/
+PODCAST_DIR = os.path.join(WORKING_DIR, 'podcast')
+TEXT_SAMMLUNG = os.path.join(WORKING_DIR, 'text_sammlung')
+TEXTE_TRAINING = os.path.join(WORKING_DIR, 'texte')
+HTML_DIR = os.path.join(WORKING_DIR, 'mat')
+
+# Welches Modell? Siehe https://openai.com/api/pricing/
 OPENAI_MODELL = "gpt-4o-mini"
 
-
+# KI Prompts
 KI_SYSTEM_PROMPT = """
-Du bist eine Lehrerin, die für 10-jährige bis 12-jährige Schüler schreibt.
-Du hast über 20 Jahre Berufserfahrung und deine Leidenschaft ist es, Kinder zu unterrichten.
-Du schreibst in einfacher, gut verständlicher Sprache mit wenigen Fachwörtern.
-Wenn doch Fachwörter vorkommen, dann erklärst du sie.
-Du verwendest die deutsch-schweizer Rechtschreibung mit ss statt ß.
+Du bist eine erfahrene Lehrerin für 10- bis 12-jährige Schüler. 
+Deine Aufgabe ist es, Themen in einfacher Sprache zu erklären, die für Kinder leicht verständlich ist. 
+Du schreibst in kurzen Sätzen (max. 10–12 Wörter) und nutzt klare, motivierende Sprache. 
+Du verwendest die deutsch-schweizer Rechtschreibung mit ss statt ß. 
+Jede Erklärung ist strukturiert: Du beginnst mit einer einfachen Erklärung, gibst ein Beispiel und schließt mit einer Frage oder einem Tipp ab. 
+Falls Fachbegriffe notwendig sind, erklärst du diese sofort. 
+Deine Antworten sind freundlich, geduldig und inspirieren die Schüler, mehr zu lernen.
 
 Denke über die Aufgabe nach, bevor du eine Antwort gibst. 
 Notiere deine Gedanken vor der jeweiligen Antwort.
@@ -89,7 +100,7 @@ HTML_KOPF = """
 """
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def berechne_text_schwierigkeit(text: str) -> int:
     """
     Berechnet den LIX-Wert des Textes.
@@ -133,7 +144,7 @@ def berechne_text_schwierigkeit(text: str) -> int:
     return lix
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def erstelle_html_audio(toml_dateiname: str) -> bool:
     """
     Erstellt aus der toml-Datei die Seite zum Hören.
@@ -145,7 +156,7 @@ def erstelle_html_audio(toml_dateiname: str) -> bool:
 
     # toml-Datei einlesen
     with open(
-        file=os.path.join(WORKING_DIR, "texte", toml_dateiname),
+        file=os.path.join(TEXTE_TRAINING, toml_dateiname),
         mode="r",
         encoding="utf-8",
     ) as file:
@@ -154,11 +165,14 @@ def erstelle_html_audio(toml_dateiname: str) -> bool:
 
     # Test, ob Audio-Datei zu diesem Text schon vorhanden ist, sonst Abbruch
     pfad_zu_audiodatei = os.path.join(
-        WORKING_DIR, "mat", toml_doc["dateiname"] + ".mp3"
+        HTML_DIR, toml_doc["dateiname"] + ".mp3"
     )
     if not os.path.exists(pfad_zu_audiodatei):
         print()
-        print(f"ACHTUNG: Audiodatei zu {toml_dateiname} fehlt.")
+        ausgabe = f"ACHTUNG: Audiodatei zu {toml_dateiname} fehlt."
+        gz.info(title='Achtung', text=ausgabe)
+        print(ausgabe)
+
         return False
 
     # Inhalte für html-Datei zusammenstellen
@@ -213,14 +227,14 @@ def erstelle_html_audio(toml_dateiname: str) -> bool:
     html_inhalt += "</body> \n</html> \n"
 
     # und speichern
-    datei_name = os.path.join(WORKING_DIR, "mat", toml_doc["dateiname"] + "-audio.html")
+    datei_name = os.path.join(HTML_DIR, toml_doc["dateiname"] + "-audio.html")
     with open(file=datei_name, mode="w", encoding="utf-8") as datei:
         datei.write(html_inhalt)
 
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def erstelle_html_text(toml_dateiname: str) -> bool:
     """
     Erstellt aus der toml-Datei die Seite zum Lesen.
@@ -232,7 +246,7 @@ def erstelle_html_text(toml_dateiname: str) -> bool:
 
     # toml-Datei einlesen
     with open(
-        file=os.path.join(WORKING_DIR, "texte", toml_dateiname),
+        file=os.path.join(TEXTE_TRAINING, toml_dateiname),
         mode="r",
         encoding="utf-8",
     ) as file:
@@ -289,18 +303,18 @@ def erstelle_html_text(toml_dateiname: str) -> bool:
     html_inhalt += "</body> \n</html> \n"
 
     # und speichern
-    datei_name = os.path.join(WORKING_DIR, "mat", toml_doc["dateiname"] + "-text.html")
+    datei_name = os.path.join(HTML_DIR, toml_doc["dateiname"] + "-text.html")
     with open(file=datei_name, mode="w", encoding="utf-8") as datei:
         datei.write(html_inhalt)
 
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def erstelle_index_html() -> bool:
     """
     Erstellt die Datei index.html
-        Sammelt aus dem Ordner texte alle Infos
+        Sammelt aus dem Ordner TEXTE_TRAINING alle Infos
         und stellt daraus den Inhalt zusammen.
     :return: True, wenn alles OK
     """
@@ -331,8 +345,8 @@ def erstelle_index_html() -> bool:
     )
     index_inhalt += "<br> \n\n"
 
-    # Abfragen, welche Dateien im Ordner texte sind
-    dateien = os.listdir(os.path.join(WORKING_DIR, "texte"))
+    # Abfragen, welche Dateien im Ordner TEXTE_TRAINING sind
+    dateien = os.listdir(TEXTE_TRAINING)
     # OK print(dateien) # ['.DS_Store', 'landleben.toml', 'test.toml']
 
     # Dateien durchgehen
@@ -342,7 +356,7 @@ def erstelle_index_html() -> bool:
 
             # toml-Datei einlesen
             with open(
-                file=os.path.join(WORKING_DIR, "texte", datei),
+                file=os.path.join(TEXTE_TRAINING, datei),
                 mode="r",
                 encoding="utf-8",
             ) as file:
@@ -351,11 +365,13 @@ def erstelle_index_html() -> bool:
 
             # Test, ob Audio-Datei zu diesem Text schon vorhanden ist, sonst Abbruch
             pfad_zu_audiodatei = os.path.join(
-                WORKING_DIR, "mat", toml_doc["dateiname"] + ".mp3"
+                HTML_DIR, toml_doc["dateiname"] + ".mp3"
             )
             if not os.path.exists(pfad_zu_audiodatei):
                 print()
-                print(f"ACHTUNG: Audiodatei zu {datei} fehlt.")
+                ausgabe = f"ACHTUNG: Audiodatei zu {datei} fehlt."
+                gz.warn(title='Achtung', text=ausgabe)
+                print(ausgabe)
                 return False
 
             # Links zu den Seiten zusammenstellen
@@ -388,11 +404,11 @@ def erstelle_index_html() -> bool:
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def erstelle_leere_text_datei() -> str:
     """
     Erstellt eine leere Text-Datei im toml-Format.
-        Speichert sie im Script-Ordner als vorlage.toml.
+        Speichert sie im Ordner texte als vorlage.toml.
     :return: Pfad zur Datei
     """
 
@@ -433,14 +449,14 @@ def erstelle_leere_text_datei() -> str:
     toml_string = tomlkit.dumps(toml_doc)
 
     # toml-Datei speichern
-    datei_name_pfad = os.path.join(WORKING_DIR, "texte", "vorlage.toml")
+    datei_name_pfad = os.path.join(TEXTE_TRAINING, "vorlage.toml")
     with open(datei_name_pfad, "w") as f:
         f.write(toml_string)
 
     return datei_name_pfad
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def formatiere_text(text_roh: str) -> str:
     """
     Formatiert den Text für die html-Datei.
@@ -469,7 +485,7 @@ def formatiere_text(text_roh: str) -> str:
     return text_formatiert
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def hole_fragen_von_openai(text: str) -> bool:
     """
     Übergibt den Text an Openai mit dem Auftrag,
@@ -497,7 +513,7 @@ def hole_fragen_von_openai(text: str) -> bool:
     return completion.choices[0].message.content
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def klicke_button_budget_bei_openai() -> bool:
     """
     Öffnet die Seite bei OpenAI, wo man den Verbrauch und das Konto ansehen kann.
@@ -511,7 +527,7 @@ def klicke_button_budget_bei_openai() -> bool:
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def klicke_button_fragen_suchen() -> bool:
     """
     Startet alle Prozesse, wenn der Button "Fragen suchen" geklickt wird
@@ -562,7 +578,7 @@ def klicke_button_fragen_suchen() -> bool:
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def klicke_button_lesbarkeit_texte() -> bool:
     """
     Zeigt den Lesbarkeitsindex eines Textes an.
@@ -603,7 +619,7 @@ def klicke_button_lesbarkeit_texte() -> bool:
     return True
 
 
-# -----------------------------------------------------------------------------
+# ############################################################################
 def klicke_button_text_bearbeiten() -> bool:
     """
     Startet alle Prozesse, wenn der Button "Text bearbeiten" geklickt wird
@@ -628,7 +644,7 @@ def klicke_button_text_bearbeiten() -> bool:
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def klicke_button_text_erstellen() -> bool:
     """
     Startet alle Prozesse, wenn der Button "Text erstellen" geklickt wird
@@ -646,7 +662,7 @@ def klicke_button_text_erstellen() -> bool:
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def klicke_button_text_normalisieren() -> bool:
     """
     Startet alle Prozesse, wenn der Button "Texte normalisieren" geklickt wird.
@@ -688,7 +704,7 @@ def klicke_button_text_normalisieren() -> bool:
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def klicke_button_text_vereinfachen() -> bool:
     """
     Vereinfacht einen Text
@@ -730,13 +746,15 @@ def klicke_button_text_vereinfachen() -> bool:
 
     # KI-Auftrag
     user_content = """
-Ich bin Lehrerin für 10-jährige bis 12-jährige Schüler in der Schweiz.
-Viele sprechen zu Hause eine andere Sprache als Deutsch.
-Und viele lesen auch nicht so gut.
-Ich benötige deshalb Texte in einfacher Sprache mit wenigen Fachwörtern.
-
-Bitte schreibe diesen Text in einfacher Sprache, so dass meine Schüler ihn gut verstehen können.
-Bitte verwende die Schweizer-Deutsche Rechtschreibung mit ss statt ß.
+Bitte vereinfache diesen Text so, dass 10- bis 12-jährige Schüler ihn gut verstehen können. 
+Schreibe in einfacher Sprache mit kurzen Hauptsätzen und vermeide schwierige Wörter. 
+Wenn Fachbegriffe notwendig sind, erkläre sie mit einem Beispiel aus dem Alltag. 
+Strukturiere den Text übersichtlich: 
+Nutze Absätze, wenn sich das Thema ändert, und mache wichtige Punkte in Listen. 
+Formuliere den Ton freundlich, motivierend und altersgerecht. 
+Halte den Text so lang wie nötig, aber so kurz wie möglich. 
+Falls es sinnvoll ist, füge eine Frage oder Aufgabe hinzu, 
+damit die Schüler nachdenken und den Text besser verstehen können.
 
 Das ist der Text:
 
@@ -784,7 +802,7 @@ Das ist der Text:
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def klicke_button_text_zu_audio() -> bool:
     """
     Wandelt den Text in eine Audio-Datei um.
@@ -832,7 +850,7 @@ def klicke_button_text_zu_audio() -> bool:
     # OK print(datei_name)
 
     # Pfad der Audio-Datei
-    pfad_zu_audiodatei = os.path.join(WORKING_DIR, "mat", datei_name + ".mp3")
+    pfad_zu_audiodatei = os.path.join(HTML_DIR, datei_name + ".mp3")
 
     # Anfrage an openai
     response = client.audio.speech.create(
@@ -848,7 +866,7 @@ def klicke_button_text_zu_audio() -> bool:
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def klicke_button_text_zu_podcast() -> bool:
     """
     Startet die Prozesse zum Erstellen eines Podcast-Dialog.
@@ -896,7 +914,7 @@ def klicke_button_text_zu_podcast() -> bool:
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def klicke_button_texte_ins_internet() -> bool:
     """
     Stellt die Texte ins Internet.
@@ -923,7 +941,7 @@ def klicke_button_texte_ins_internet() -> bool:
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def klicke_button_texte_zu_html() -> bool:
     """
     Erstellt aus allen Texten index.html und
@@ -943,7 +961,7 @@ def klicke_button_texte_zu_html() -> bool:
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def mache_lokalen_commit(kommentar: str) -> bool:
     """
     Mach ein Commit der lokalen Dateien
@@ -981,7 +999,7 @@ def mache_lokalen_commit(kommentar: str) -> bool:
         return False
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def mache_podcast_zu_audio(datei_name: str, podcast_text: str) -> bool:
     """
     Macht aus dem Podcast-Text eine Audiodatei.
@@ -1041,7 +1059,7 @@ def mache_podcast_zu_audio(datei_name: str, podcast_text: str) -> bool:
                 input=satz[9:],
             )
             response.write_to_file(
-                os.path.join(os.getcwd(), "podcast", str(nummer) + ".mp3")
+                os.path.join(PODCAST_DIR, str(nummer) + ".mp3")
             )
             mp3_befehl.append(str(nummer) + ".mp3")
             rm_befehl.append(str(nummer) + ".mp3")
@@ -1057,7 +1075,7 @@ def mache_podcast_zu_audio(datei_name: str, podcast_text: str) -> bool:
                 input=satz[9:],
             )
             response.write_to_file(
-                os.path.join(os.getcwd(), "podcast", str(nummer) + ".mp3")
+                os.path.join(PODCAST_DIR, str(nummer) + ".mp3")
             )
             mp3_befehl.append(str(nummer) + ".mp3")
             rm_befehl.append(str(nummer) + ".mp3")
@@ -1067,7 +1085,7 @@ def mache_podcast_zu_audio(datei_name: str, podcast_text: str) -> bool:
     warte_fenster.destroy()
 
     # ins podcast-Verzeichnis wechseln
-    os.chdir(os.path.join(WORKING_DIR, "podcast"))
+    os.chdir(PODCAST_DIR)
 
     # Audio-Teil-Dateien zusammensetzen (mp3wrap)
     subprocess.run(mp3_befehl)
@@ -1081,7 +1099,7 @@ def mache_podcast_zu_audio(datei_name: str, podcast_text: str) -> bool:
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def mache_push_zu_github() -> bool:
     """
     Macht einen Push des git-Ordners nach Github
@@ -1117,7 +1135,7 @@ def mache_push_zu_github() -> bool:
         return False
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def mache_text_zu_podcast(text_roh: str) -> str:
     """
     Erstellt aus text_roh ein Podcast-Script.
@@ -1174,7 +1192,7 @@ Das ist der Text:
     return completion.choices[0].message.content
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def normalisiere_text(text_roh: str) -> str:
     """
     Normalisiert den Text:
@@ -1207,7 +1225,7 @@ def normalisiere_text(text_roh: str) -> str:
     return text_return
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def waehle_text_datei() -> str:
     """
     Wählt eine Text-Datei aus - Format soll txt sein.
@@ -1228,7 +1246,7 @@ def waehle_text_datei() -> str:
     return pfad_zu_textdatei
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def zeige_fenster_extern(pfad_zu_toml_datei: str) -> bool:
     """
     Zeige ein neues Fenster von Visual-Code mit der Datei pfad_zu_toml_datei
@@ -1245,7 +1263,7 @@ def zeige_fenster_extern(pfad_zu_toml_datei: str) -> bool:
     return True
 
 
-# -----------------------------------------------------------------------------
+# #############################################################################
 def zeige_fenster_fuer_texte(pfad_zur_toml_datei: str) -> bool:
     """
     Zeigt ein Fenster für einen neuen Texte an.
@@ -1285,7 +1303,7 @@ def zeige_fenster_fuer_texte(pfad_zur_toml_datei: str) -> bool:
         # Bestimme neuen Dateiname aus dem Titel
         titel_roh = str(text_feld.tk.get("4.13", "4.end- 1 chars"))
         pfad_zur_toml_datei_neu = os.path.join(
-            WORKING_DIR, "texte", titel_roh + ".toml"
+            TEXTE_TRAINING, titel_roh + ".toml"
         )
 
         # wenn Titel schon vorhanden?

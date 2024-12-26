@@ -58,12 +58,12 @@ def main() -> bool:
 
     # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     # Button: Text vereinfachen
-    # gz.PushButton(
-    #     master=app,
-    #     text="Texte vereinfachen",
-    #     width=100,
-    #     command=helfer.klicke_button_text_vereinfachen,
-    # )
+    gz.PushButton(
+        master=app,
+        text="Texte vereinfachen",
+        width=100,
+        command=helfer.klicke_button_text_vereinfachen,
+    )
 
     # Button: Fragen zu Text suchen
     gz.PushButton(
@@ -107,12 +107,12 @@ def main() -> bool:
 
     # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     # Button: Lesbarkeit der Texte
-    # gz.PushButton(
-    #     master=app,
-    #     text="Lesbarkeit der Texte",
-    #     width=100,
-    #     command=helfer.klicke_button_lesbarkeit_texte,
-    # )
+    gz.PushButton(
+        master=app,
+        text="Lesbarkeit der Texte",
+        width=100,
+        command=helfer.klicke_button_lesbarkeit_texte,
+    )
 
     # Button: Budget bei OpenAI
     gz.PushButton(
